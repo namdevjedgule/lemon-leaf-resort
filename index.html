@@ -14,6 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -46,17 +47,29 @@
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-eyebrow reveal-up">Luxury Glamping · Bhor, Pune · Est. 2023</div>
-            <h1 class="hero-title reveal-up delay-1">Escape to Nature. <em>Stay in Luxury.</em></h1>
-            <p class="hero-sub reveal-up delay-2">Discover luxury glamping, lake-view stays, and unforgettable
-                experiences at Lemon Leaf Resort, Bhor. <br />Relax by the infinity pool, enjoy bonfire nights, and wake
-                up to
-                breathtaking views near Rajgad Fort and Bhatghar Dam.</p>
+            <div class="hero-location reveal-up"><i class="fa-solid fa-location-dot"></i> Wadhane, Bhor · Pune —
+                Maharashtra</div>
+            <div class="hero-eyebrow reveal-up">Luxury Glamping · Resort · Nature Stay</div>
+            <h1 class="hero-title reveal-up delay-1">Relax. Reconnect.<em> Rejuvenate.</em></h1>
+            <p class="hero-sub reveal-up delay-2">Infinity Pool with Lake View · Bubble Domes · Glamping Pods · Pet
+                Friendly<br />Just 55 km from Pune — near Rajgad &amp; Torna Forts.</p>
             <div class="hero-btns reveal-up delay-3">
-                <a href="#stays" class="btn-primary">Book Your Stay</a>
-                <a href="#experiences" class="btn-ghost">Explore Experiences</a>
+                <a href="#packages" class="btn-primary">View Packages &amp; Pricing</a>
+                <a href="#stays" class="btn-ghost">Explore Stays</a>
             </div>
         </div>
+        <div class="hero-slider-dots" id="heroDots">
+            <button class="dot active" data-idx="0" aria-label="Slide 1"></button>
+            <button class="dot" data-idx="1" aria-label="Slide 2"></button>
+            <button class="dot" data-idx="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <section class="hero-stat-section">
         <div class="hero-stats reveal-up delay-4">
             <div class="hero-stat"><strong>12+</strong><span>Stay Types</span></div>
             <div class="hero-stat-divider"></div>
@@ -69,15 +82,6 @@
             <div class="hero-stat"><strong>66 km</strong><span>From Pune</span></div>
             <div class="hero-stat-divider"></div>
             <div class="hero-stat"><strong>3+</strong><span>Nearby Attractions</span></div>
-        </div>
-        <div class="hero-slider-dots" id="heroDots">
-            <button class="dot active" data-idx="0" aria-label="Slide 1"></button>
-            <button class="dot" data-idx="1" aria-label="Slide 2"></button>
-            <button class="dot" data-idx="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="hero-scroll-hint">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
         </div>
     </section>
 
@@ -118,28 +122,38 @@
         </div>
     </section>
 
+    <!-- ABOUT -->
     <section class="about-strip" id="about">
         <div class="container about-grid">
             <div class="about-img-wrap reveal-left">
                 <img src="https://images.unsplash.com/photo-1533632359083-0185df1be85d?w=800&q=80"
                     alt="Lemon Leaf Resort Bhor Pune infinity pool glamping" loading="lazy" />
-                <div class="about-badge">📍 Bhor, Pune</div>
+                <div class="about-badge"><i class="fa-solid fa-location-dot"></i> Bhor, Pune</div>
             </div>
             <div class="about-content reveal-right">
                 <span class="eyebrow">About Lemon Leaf Resort</span>
                 <h2>Pune's Finest<br /><em>Luxury Glamping Escape</em></h2>
                 <p>Nestled in the picturesque village of Wadhane, Bhor — Lemon Leaf Resort is where nature and luxury
-                    meet. Wake up to misty mountain views, take a dip in our infinity pool overlooking the shimmering
-                    lake, and spend your evenings under the open sky.</p>
+                    meet. Wake
+                    up to misty mountain views, take a dip in our infinity pool overlooking the shimmering lake, and
+                    spend your
+                    evenings under the open sky.</p>
                 <p>Strategically located near the historic Rajgad Fort, Torna Fort, Necklace Point &amp; Bhatghar Dam,
-                    we are the ideal base for adventure and relaxation alike — just 66 km from Pune Railway Station.</p>
+                    we are
+                    the ideal base for adventure and relaxation alike — just 55 km from Pune Railway Station.</p>
                 <ul class="about-features">
-                    <li><span class="feat-icon">🏊</span> Infinity Pool with breathtaking lake view</li>
-                    <li><span class="feat-icon">🐾</span> 100% pet friendly — bring your furry family</li>
-                    <li><span class="feat-icon">🌙</span> Open Sky Theatre &amp; Bonfire every night</li>
-                    <li><span class="feat-icon">🍽️</span> Buffet Dinner (Veg &amp; Non-Veg) included</li>
-                    <li><span class="feat-icon">🏕️</span> Pods, Domes, Tents &amp; Rajasthani Stays</li>
-                    <li><span class="feat-icon">🛜</span> Wi-Fi &amp; Hot Water at all stays</li>
+                    <li><span class="feat-icon"><i class="fa-solid fa-person-swimming"></i></span> Infinity Pool with
+                        breathtaking lake view</li>
+                    <li><span class="feat-icon"><i class="fa-solid fa-paw"></i></span> 100% pet friendly — bring your
+                        furry family</li>
+                    <li><span class="feat-icon"><i class="fa-regular fa-moon"></i></span> Open Sky Theatre &amp; Bonfire
+                        every night</li>
+                    <li><span class="feat-icon"><i class="fa-solid fa-utensils"></i></span> Buffet Dinner (Veg &amp;
+                        Non-Veg) included</li>
+                    <li><span class="feat-icon"><i class="fa-solid fa-tent"></i></span> Pods, Domes, Tents &amp;
+                        Rajasthani Stays</li>
+                    <li><span class="feat-icon"><i class="fa-solid fa-wifi"></i></span> Wi-Fi &amp; Hot Water at all
+                        stays</li>
                 </ul>
                 <div class="about-ctas">
                     <a href="#stays" class="btn-primary">Explore All Stays</a>
@@ -157,13 +171,15 @@
         </div>
     </section>
 
+    <!-- STAYS / ACCOMMODATION -->
     <section class="stays-section" id="stays">
         <div class="container">
             <div class="section-header reveal-up">
                 <span class="eyebrow">Accommodation</span>
                 <h2>4 Unique Ways<br /><em>to Stay in Nature</em></h2>
                 <p>From adventurous Decathlon tents to our signature Luxury Bubble Dome — every stay is crafted for
-                    comfort, every night is unforgettable.</p>
+                    comfort,
+                    every night is unforgettable.</p>
             </div>
             <div class="stays-grid">
 
@@ -175,10 +191,12 @@
                         <div class="stay-tag">Adventure Stay</div>
                     </div>
                     <div class="stay-body">
-                        <div class="stay-meta"><span>⛺ Decathlon Tent</span><span>Min. 2 Guests</span></div>
+                        <div class="stay-meta"><span><i class="fa-solid fa-campground"></i> Decathlon
+                                Tent</span><span>Min. 2 Guests</span></div>
                         <h3>Decathlon Tent</h3>
                         <p>Adventure-grade Decathlon tents offering a pure, raw camping experience in the heart of
-                            nature at Wadhane Bhor — packed with all essential comforts.</p>
+                            nature at Wadhane
+                            Bhor — packed with all essential comforts.</p>
                         <ul class="stay-amenities">
                             <li>Welcome drink on arrival</li>
                             <li>Hi Tea &amp; snacks</li>
@@ -188,9 +206,11 @@
                         </ul>
                         <div class="pricing-block">
                             <div class="price-row"><span class="price-label">Mon – Thu</span><span
-                                    class="price-val">₹1,750 <small>/person</small></span></div>
+                                    class="price-val">₹1,750
+                                    <small>/person</small></span></div>
                             <div class="price-row weekend"><span class="price-label">Fri – Sun</span><span
-                                    class="price-val">₹2,000 <small>/person</small></span></div>
+                                    class="price-val">₹2,000
+                                    <small>/person</small></span></div>
                         </div>
                         <div class="stay-footer">
                             <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-sm">Book on
@@ -208,10 +228,12 @@
                         <div class="stay-tag">Most Popular</div>
                     </div>
                     <div class="stay-body">
-                        <div class="stay-meta"><span>🏕️ Glamping Pod</span><span>Min. 2 Guests</span></div>
+                        <div class="stay-meta"><span><i class="fa-solid fa-tent"></i> Glamping Pod</span><span>Min. 2
+                                Guests</span></div>
                         <h3>Glamping Pod</h3>
                         <p>The sweet spot between camping and comfort — our glamping pods are cozy, well-equipped
-                            private units perfect for couples and friends seeking that nature escape.</p>
+                            private units
+                            perfect for couples and friends seeking that nature escape.</p>
                         <ul class="stay-amenities">
                             <li>Welcome drink on arrival</li>
                             <li>Hi Tea &amp; snacks</li>
@@ -221,9 +243,11 @@
                         </ul>
                         <div class="pricing-block">
                             <div class="price-row"><span class="price-label">Mon – Thu</span><span
-                                    class="price-val">₹2,200 <small>/person</small></span></div>
+                                    class="price-val">₹2,200
+                                    <small>/person</small></span></div>
                             <div class="price-row weekend"><span class="price-label">Fri – Sun</span><span
-                                    class="price-val">₹2,550 <small>/person</small></span></div>
+                                    class="price-val">₹2,550
+                                    <small>/person</small></span></div>
                         </div>
                         <div class="stay-footer">
                             <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-sm">Book on
@@ -238,13 +262,15 @@
                     <div class="stay-img">
                         <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
                             alt="Luxury Bubble Dome Resort near Pune" loading="lazy" />
-                        <div class="stay-tag">✨ Signature Stay</div>
+                        <div class="stay-tag"><i class="fa-solid fa-sparkles"></i> Signature Stay</div>
                     </div>
                     <div class="stay-body">
-                        <div class="stay-meta"><span>🌟 Bubble Dome</span><span>Min. 2 Guests</span></div>
+                        <div class="stay-meta"><span><i class="fa-solid fa-star"></i> Bubble Dome</span><span>Min. 2
+                                Guests</span></div>
                         <h3>Luxury Bubble Dome</h3>
                         <p>Our crown jewel — a fully transparent luxury bubble dome where you sleep under a million
-                            stars and wake to misty Sahyadri views. The ultimate glamping experience near Pune.</p>
+                            stars and wake
+                            to misty Sahyadri views. The ultimate glamping experience near Pune.</p>
                         <ul class="stay-amenities">
                             <li>Welcome drink on arrival</li>
                             <li>Hi Tea &amp; snacks</li>
@@ -255,9 +281,11 @@
                         </ul>
                         <div class="pricing-block">
                             <div class="price-row"><span class="price-label">Mon – Thu</span><span
-                                    class="price-val">₹4,000 <small>/person</small></span></div>
+                                    class="price-val">₹4,000
+                                    <small>/person</small></span></div>
                             <div class="price-row weekend"><span class="price-label">Fri – Sun</span><span
-                                    class="price-val">₹5,000 <small>/person</small></span></div>
+                                    class="price-val">₹5,000
+                                    <small>/person</small></span></div>
                         </div>
                         <div class="stay-footer">
                             <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-sm">Book on
@@ -275,11 +303,12 @@
                         <div class="stay-tag">Royal Experience</div>
                     </div>
                     <div class="stay-body">
-                        <div class="stay-meta"><span>🏰 Rajasthani Tent</span><span>Min. 2 Guests</span></div>
+                        <div class="stay-meta"><span><i class="fa-solid fa-torii-gate"></i> Rajasthani
+                                Tent</span><span>Min. 2 Guests</span></div>
                         <h3>Rajasthani Tent</h3>
                         <p>Step into royal grandeur — our heritage-inspired Rajasthani tents feature vibrant
-                            furnishings, rich fabrics, and a regal ambience that transforms every stay into a palatial
-                            escape.</p>
+                            furnishings, rich
+                            fabrics, and a regal ambience that transforms every stay into a palatial escape.</p>
                         <ul class="stay-amenities">
                             <li>Welcome drink on arrival</li>
                             <li>Hi Tea &amp; snacks</li>
@@ -289,9 +318,11 @@
                         </ul>
                         <div class="pricing-block">
                             <div class="price-row"><span class="price-label">Mon – Thu</span><span
-                                    class="price-val">₹3,750 <small>/person</small></span></div>
+                                    class="price-val">₹3,750
+                                    <small>/person</small></span></div>
                             <div class="price-row weekend"><span class="price-label">Fri – Sun</span><span
-                                    class="price-val">₹4,500 <small>/person</small></span></div>
+                                    class="price-val">₹4,500
+                                    <small>/person</small></span></div>
                         </div>
                         <div class="stay-footer">
                             <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-sm">Book on
@@ -314,115 +345,120 @@
         </div>
     </section>
 
+    <!-- PACKAGE INCLUDES -->
     <section class="packages-section" id="packages">
         <div class="container">
             <div class="section-header section-header--light reveal-up">
                 <span class="eyebrow eyebrow--light">Package Inclusions</span>
                 <h2>Every Package<br /><em>Includes All This</em></h2>
                 <p>Zero hidden charges. Your entire experience — meals, activities, amenities — is included in every
-                    stay package.</p>
+                    stay
+                    package.</p>
             </div>
             <div class="pkg-grid">
                 <div class="pkg-card reveal-up">
-                    <div class="pkg-icon">🥤</div>
+                    <div class="pkg-icon"><i class="fa-solid fa-glass-water"></i></div>
                     <h4>Welcome Drink</h4>
                     <p>Start your stay refreshed with a complimentary welcome drink on arrival.</p>
                 </div>
                 <div class="pkg-card reveal-up delay-1">
-                    <div class="pkg-icon">☕</div>
+                    <div class="pkg-icon"><i class="fa-solid fa-mug-hot"></i></div>
                     <h4>Hi Tea &amp; Snacks</h4>
                     <p>Evening hi-tea with delicious snacks served at the resort.</p>
                 </div>
                 <div class="pkg-card reveal-up delay-2">
-                    <div class="pkg-icon">🍽️</div>
+                    <div class="pkg-icon"><i class="fa-solid fa-utensils"></i></div>
                     <h4>Buffet Dinner</h4>
                     <p>Lavish dinner buffet — both vegetarian and non-vegetarian spreads every night.</p>
                 </div>
                 <div class="pkg-card reveal-up delay-3">
-                    <div class="pkg-icon">🌅</div>
+                    <div class="pkg-icon"><i class="fa-solid fa-sun"></i></div>
                     <h4>Breakfast Buffet</h4>
                     <p>Fresh morning breakfast buffet to fuel your day's adventure.</p>
                 </div>
                 <div class="pkg-card reveal-up">
-                    <div class="pkg-icon">🏊</div>
+                    <div class="pkg-icon"><i class="fa-solid fa-person-swimming"></i></div>
                     <h4>Infinity Pool</h4>
                     <p>Unlimited access to our iconic infinity pool overlooking the lake.</p>
                 </div>
                 <div class="pkg-card reveal-up delay-1">
-                    <div class="pkg-icon">🔥</div>
+                    <div class="pkg-icon"><i class="fa-solid fa-fire"></i></div>
                     <h4>Bonfire</h4>
                     <p>Evening bonfire under the open sky — stories, music, and warmth.</p>
                 </div>
                 <div class="pkg-card reveal-up delay-2">
-                    <div class="pkg-icon">🎬</div>
+                    <div class="pkg-icon"><i class="fa-solid fa-film"></i> </div>
                     <h4>Open Sky Theatre</h4>
                     <p>Watch movies under the stars at our open-air cinema experience.</p>
                 </div>
                 <div class="pkg-card reveal-up delay-3">
-                    <div class="pkg-icon">🎮</div>
+                    <div class="pkg-icon"><i class="fa-solid fa-gamepad"></i></div>
                     <h4>All Games &amp; Activities</h4>
                     <p>Snake &amp; Ladder, Chess, UNO, Cards, Rain Dance, Cricket Screening &amp; more.</p>
                 </div>
             </div>
             <div class="bbq-addon reveal-up">
-                <div class="bbq-icon">🍖</div>
+                <div class="bbq-icon"><i class="fa-solid fa-drumstick-bite"></i></div>
                 <div class="bbq-text">
                     <h5>BBQ Add-on — Available on Request</h5>
-                    <p>Elevate your evening with a sizzling BBQ experience — <strong>₹900 / 1 kg Non-Veg</strong>
-                        &nbsp;·&nbsp; <strong>₹600 / 1 kg Veg</strong></p>
+                    <p>Elevate your evening with a sizzling BBQ experience
+                    </p>
                 </div>
                 <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-sm">Request BBQ</a>
             </div>
         </div>
     </section>
 
+    <!-- ACTIVITIES -->
     <section class="exp-section" id="experiences">
         <div class="container">
             <div class="section-header reveal-up">
                 <span class="eyebrow">Activities &amp; Experiences</span>
                 <h2>Every Day Is<br /><em>a New Adventure</em></h2>
                 <p>From the pool to the playground, from bonfire nights to stargazing — every moment at Lemon Leaf is
-                    crafted for joy.</p>
+                    crafted
+                    for joy.</p>
             </div>
             <div class="exp-grid">
                 <div class="exp-card reveal-up">
-                    <div class="exp-icon">🏊</div>
+                    <div class="exp-icon"><i class="fa-solid fa-person-swimming"></i></div>
                     <h4>Infinity Pool</h4>
                     <p>Swim in our stunning infinity pool that blends seamlessly with the lake horizon — a view you'll
-                        never forget.</p>
+                        never
+                        forget.</p>
                 </div>
                 <div class="exp-card reveal-up delay-1">
-                    <div class="exp-icon">💃</div>
+                    <div class="exp-icon"><i class="fa-solid fa-music"></i></div>
                     <h4>Rain Dance</h4>
                     <p>High-energy rain dance sessions — perfect for groups, families, and pure unfiltered fun.</p>
                 </div>
                 <div class="exp-card reveal-up delay-2">
-                    <div class="exp-icon">🔥</div>
+                    <div class="exp-icon"><i class="fa-solid fa-fire"></i></div>
                     <h4>Bonfire Nights</h4>
                     <p>Gather around a crackling bonfire every evening for stories, chai, and starlit conversations.</p>
                 </div>
                 <div class="exp-card reveal-up delay-3">
-                    <div class="exp-icon">🎬</div>
+                    <div class="exp-icon"><i class="fa-solid fa-film"></i></div>
                     <h4>Open Sky Theatre</h4>
                     <p>Watch films under a canopy of stars at our open-air theatre. Cinema has never felt this free.</p>
                 </div>
                 <div class="exp-card reveal-up">
-                    <div class="exp-icon">🏏</div>
+                    <div class="exp-icon"><i class="fa-solid fa-tv"></i></div>
                     <h4>Live Cricket Screening</h4>
                     <p>Never miss a match — enjoy live cricket with your squad at the resort's big screen setup.</p>
                 </div>
                 <div class="exp-card reveal-up delay-1">
-                    <div class="exp-icon">🎲</div>
+                    <div class="exp-icon"><i class="fa-solid fa-dice"></i></div>
                     <h4>Board Games</h4>
                     <p>Unplug and play — Snake &amp; Ladder, Chessboard, UNO, Card Games and more.</p>
                 </div>
                 <div class="exp-card reveal-up delay-2">
-                    <div class="exp-icon">⚽</div>
+                    <div class="exp-icon"><i class="fa-solid fa-futbol"></i></div>
                     <h4>Fooseball <span class="coming-soon">Coming Soon</span></h4>
                     <p>Table football for the competitive souls — arriving very soon at Lemon Leaf!</p>
                 </div>
                 <div class="exp-card reveal-up delay-3">
-                    <div class="exp-icon">💦</div>
+                    <div class="exp-icon"><i class="fa-solid fa-water"></i></div>
                     <h4>Dunk Tank <span class="coming-soon">Coming Soon</span></h4>
                     <p>The ultimate fun challenge — perfect for groups who love to dare each other.</p>
                 </div>
@@ -431,17 +467,17 @@
             <!-- KIDS ZONE -->
             <div class="kids-zone reveal-up">
                 <div class="kids-header">
-                    <div class="kids-icon">🧒</div>
+                    <div class="kids-icon"><i class="fa-solid fa-child-reaching"></i></div>
                     <div>
                         <h4>Kids Zone — <span class="coming-soon-lg">Coming Very Soon!</span></h4>
                         <p>We're building a dedicated children's paradise at Lemon Leaf Resort.</p>
                     </div>
                 </div>
                 <div class="kids-grid">
-                    <div class="kid-item">🌊 Wave Slide</div>
-                    <div class="kid-item">⭕ X and O</div>
-                    <div class="kid-item">🎠 Merry Go Round</div>
-                    <div class="kid-item">🛝 Swing Set</div>
+                    <div class="kid-item"><i class="fa-solid fa-water"></i> Wave Slide</div>
+                    <div class="kid-item"><i class="fa-solid fa-puzzle-piece"></i> X and O</div>
+                    <div class="kid-item"><i class="fa-solid fa-horse"></i> Merry Go Round</div>
+                    <div class="kid-item"><i class="fa-solid fa-children"></i> Swing Set</div>
                 </div>
             </div>
         </div>
@@ -492,28 +528,28 @@
                 <h2>Comfort in<br /><em>Every Corner</em></h2>
             </div>
             <div class="amen-grid">
-                <div class="amen-card reveal-up"><span>🏊</span>
+                <div class="amen-card reveal-up"><span><i class="fa-solid fa-person-swimming"></i></span>
                     <p>Infinity Pool with Lake View</p>
                 </div>
-                <div class="amen-card reveal-up delay-1"><span>🛜</span>
+                <div class="amen-card reveal-up delay-1"><span><i class="fa-solid fa-wifi"></i></span>
                     <p>Wi-Fi Throughout Resort</p>
                 </div>
-                <div class="amen-card reveal-up delay-2"><span>🚿</span>
+                <div class="amen-card reveal-up delay-2"><span><i class="fa-solid fa-shower"></i></span>
                     <p>Hot Water Facility</p>
                 </div>
-                <div class="amen-card reveal-up delay-3"><span>🐾</span>
+                <div class="amen-card reveal-up delay-3"><span><i class="fa-solid fa-paw"></i></span>
                     <p>Pet Friendly</p>
                 </div>
-                <div class="amen-card reveal-up"><span>🧴</span>
+                <div class="amen-card reveal-up"><span><i class="fa-solid fa-pump-soap"></i></span>
                     <p>Toiletries Provided</p>
                 </div>
-                <div class="amen-card reveal-up delay-1"><span>🛁</span>
+                <div class="amen-card reveal-up delay-1"><span><i class="fa-solid fa-bath"></i></span>
                     <p>Bath, Hand &amp; Pool Towels</p>
                 </div>
-                <div class="amen-card reveal-up delay-2"><span>🍖</span>
+                <div class="amen-card reveal-up delay-2"><span><i class="fa-solid fa-drumstick-bite"></i></span>
                     <p>BBQ on Request</p>
                 </div>
-                <div class="amen-card reveal-up delay-3"><span>🌾</span>
+                <div class="amen-card reveal-up delay-3"><span><i class="fa-solid fa-seedling"></i></span>
                     <p>Organic Farming (WIP)</p>
                 </div>
             </div>
@@ -629,19 +665,72 @@
                     <p>Tucked in the serene village of Wadhane, Bhor — Lemon Leaf Resort is the closest luxury nature
                         escape from Pune. Set near iconic landmarks and forts of the Sahyadris.</p>
                     <div class="loc-address-card">
-                        <span class="loc-addr-icon">📍</span>
+                        <span class="loc-addr-icon"><i class="fa-solid fa-location-dot"></i></span>
                         <div>
                             <strong>Lemon Leaf Resort</strong>
                             <p>Gat No. 13/4, Lemon Leaf, Wadhane,<br />Bhor, Pune — Maharashtra 412206</p>
                         </div>
                     </div>
                     <ul class="loc-distances">
-                        <li><span class="loc-city">🚉 Pune Railway Station</span><span>66 km</span></li>
-                        <li><span class="loc-city">🛣️ Katraj, Pune</span><span>56 km</span></li>
-                        <li><span class="loc-city">🏰 Rajgad Fort</span><span>Nearby</span></li>
-                        <li><span class="loc-city">🏰 Torna Fort</span><span>Nearby</span></li>
-                        <li><span class="loc-city">💎 Necklace Point</span><span>Nearby</span></li>
-                        <li><span class="loc-city">💧 Bhatghar Dam</span><span>Nearby</span></li>
+                        <li>
+                            <span class="loc-city">
+                                <span class="loc-city-icon">
+                                    <i class="fa-solid fa-train"></i>
+                                </span>
+                                Pune Railway Station
+                            </span>
+                            <span>66 km</span>
+                        </li>
+
+                        <li>
+                            <span class="loc-city">
+                                <span class="loc-city-icon">
+                                    <i class="fa-solid fa-road"></i>
+                                </span>
+                                Katraj, Pune
+                            </span>
+                            <span>56 km</span>
+                        </li>
+
+                        <li>
+                            <span class="loc-city">
+                                <span class="loc-city-icon">
+                                    <i class="fa-solid fa-landmark"></i>
+                                </span>
+                                Rajgad Fort
+                            </span>
+                            <span>Nearby</span>
+                        </li>
+
+                        <li>
+                            <span class="loc-city">
+                                <span class="loc-city-icon">
+                                    <i class="fa-solid fa-landmark"></i>
+                                </span>
+                                Torna Fort
+                            </span>
+                            <span>Nearby</span>
+                        </li>
+
+                        <li>
+                            <span class="loc-city">
+                                <span class="loc-city-icon">
+                                    <i class="fa-regular fa-gem"></i>
+                                </span>
+                                Necklace Point
+                            </span>
+                            <span>Nearby</span>
+                        </li>
+
+                        <li>
+                            <span class="loc-city">
+                                <span class="loc-city-icon">
+                                    <i class="fa-solid fa-water"></i>
+                                </span>
+                                Bhatghar Dam
+                            </span>
+                            <span>Nearby</span>
+                        </li>
                     </ul>
                     <div class="loc-btns">
                         <a href="https://maps.google.com/?q=Gat+No+13/4+Wadhane+Bhor+Pune+Maharashtra+412206"
@@ -654,14 +743,16 @@
                         <div class="map-visual">
                             <div class="map-pin-wrap">
                                 <div class="map-pin-pulse"></div>
-                                <div class="map-pin">📍</div>
+                                <div class="map-pin"><i class="fa-solid fa-location-dot"></i></div>
                             </div>
                             <div class="map-label">Lemon Leaf Resort, Bhor</div>
                         </div>
-                        <p class="map-note">Gat No. 13/4, Wadhane, Bhor<br />Pune — Maharashtra 412206</p>
+                        <p class="map-note">Gat No. 13/4, Wadhane Gaon, Bhor<br />Pune - Maharashtra 412206</p>
                         <div class="map-nearby">
-                            <span>🏰 Rajgad</span><span>🏰 Torna</span><span>💎 Necklace Pt</span><span>💧
-                                Bhatghar</span>
+                            <span><i class="fa-solid fa-landmark"></i> Rajgad</span>
+                            <span><i class="fa-solid fa-landmark"></i> Torna</span>
+                            <span><i class="fa-regular fa-gem"></i> Necklace Pt</span>
+                            <span><i class="fa-solid fa-water"></i> Bhatghar</span>
                         </div>
                         <a href="https://maps.google.com/?q=Gat+No+13/4+Wadhane+Bhor+Pune+Maharashtra+412206"
                             target="_blank" rel="noopener" class="map-open-btn">Open Full Map →</a>
@@ -730,7 +821,7 @@
         <div class="cta-banner-bg"></div>
         <div class="cta-banner-inner">
             <div class="cta-content reveal-up">
-                <span class="eyebrow eyebrow--light">📍 Bhor, Pune · Just 66 km Away</span>
+                <span class="eyebrow eyebrow--light"><i class="fa-solid fa-location-dot"></i> Bhor, Pune · Just 66 km Away</span>
                 <h2>Ready to Leave<br /><em>the City Behind?</em></h2>
                 <p>Summer slots are filling fast. Reserve your stay today and wake up to the forest tomorrow.</p>
                 <div class="cta-actions">
@@ -756,36 +847,36 @@
                     <span class="eyebrow">Reach Us</span>
                     <h2>We'd Love to<br /><em>Have You Here</em></h2>
                     <div class="contact-details">
-                        <div class="cd-item"><span class="cd-icon">📍</span>
+                        <div class="cd-item"><span class="cd-icon"><i class="fa-solid fa-location-dot"></i></span>
                             <div><strong>Address</strong>
                                 <p>Gat No. 13/4, Lemon Leaf, Wadhane, Bhor,<br />Pune — Maharashtra 412206</p>
                             </div>
                         </div>
-                        <div class="cd-item"><span class="cd-icon">📞</span>
+                        <div class="cd-item"><span class="cd-icon"><i class="fa-solid fa-phone-volume"></i></span>
                             <div><strong>Phone / WhatsApp</strong>
                                 <p><a href="tel:+919876543210">+91 98765 43210</a></p>
                             </div>
                         </div>
-                        <div class="cd-item"><span class="cd-icon">✉️</span>
+                        <div class="cd-item"><span class="cd-icon"><i class="fa-solid fa-envelope"></i></span>
                             <div><strong>Email</strong>
                                 <p><a href="mailto:hello@lemonleafresort.com">hello@lemonleafresort.com</a></p>
                             </div>
                         </div>
-                        <div class="cd-item"><span class="cd-icon">🕐</span>
+                        <div class="cd-item"><span class="cd-icon"><i class="fa-solid fa-clock"></i></span>
                             <div><strong>Reservation Hours</strong>
                                 <p>Mon–Sun · 9:00 AM – 8:00 PM</p>
                             </div>
                         </div>
-                        <div class="cd-item"><span class="cd-icon">⏱️</span>
+                        <div class="cd-item"><span class="cd-icon"><i class="fa-solid fa-right-to-bracket"></i></span>
                             <div><strong>Check-in / Check-out</strong>
                                 <p>Check-in: 4:00 PM &nbsp;·&nbsp; Check-out: 11:00 AM</p>
                             </div>
                         </div>
                     </div>
                     <div class="contact-social">
-                        <a href="#" aria-label="Instagram">📸 Instagram</a>
-                        <a href="#" aria-label="Facebook">👥 Facebook</a>
-                        <a href="https://wa.me/919876543210" aria-label="WhatsApp">💬 WhatsApp</a>
+                        <a href="#" aria-label="Instagram"> <i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="#" aria-label="Facebook"> <i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                        <a href="https://wa.me/919876543210" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
                 <div class="contact-form-wrap reveal-right">
