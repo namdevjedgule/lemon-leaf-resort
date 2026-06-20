@@ -2228,25 +2228,38 @@ p {
     gap: 3rem;
 }
 
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-col ul {
+    align-items: center;
+}
+
 .footer-logo {
     display: flex;
     align-items: center;
-    gap: 0.7rem;
-
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    color: var(--bone);
-
-    margin-bottom: 0.9rem;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
-.footer-logo i {
-    color: var(--tan);
-    font-size: 1.2rem;
+.footer-logo img {
+    display: block;
+    width: auto;
+    height: 75px;
+    max-height: 75px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.footer-logo em {
-    color: var(--tan);
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .footer-brand p {
@@ -2258,7 +2271,11 @@ p {
 
 .footer-socials {
     display: flex;
+    flex-direction: row;   /* force horizontal layout */
+    justify-content: center;
+    align-items: center;
     gap: 0.8rem;
+    flex-wrap: nowrap;     /* prevent wrapping */
 }
 
 .footer-socials a {
