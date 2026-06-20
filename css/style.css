@@ -1563,72 +1563,6 @@ p {
     line-height: 1.5;
 }
 
-/* ── GALLERY ── */
-.gallery-section {
-    padding: 6rem 0 0;
-    background: var(--bone);
-}
-
-.gallery-section .section-header {
-    margin-bottom: 2.5rem;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 260px 260px;
-    gap: 8px;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
-.gallery-item.tall {
-    grid-row: span 2;
-}
-
-.gallery-item.wide {
-    grid-column: span 2;
-}
-
-.gallery-item img {
-    transition: transform 0.7s ease;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.07);
-}
-
-.gallery-hover {
-    position: absolute;
-    inset: 0;
-    background: rgba(53, 64, 36, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity var(--trans);
-}
-
-.gallery-item:hover .gallery-hover {
-    opacity: 1;
-}
-
-.gallery-hover span {
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--bone);
-    border: 1px solid rgba(229, 215, 196, 0.6);
-    padding: 0.5rem 1.2rem;
-    border-radius: 2px;
-}
-
-/* Lightbox */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -1701,7 +1635,6 @@ p {
     transform: translateY(-50%);
 }
 
-/* ── TESTIMONIALS ── */
 .testi-section {
     padding: 6rem 0;
     background: var(--bone-lt);
