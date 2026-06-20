@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signature Escapes — Lemon Leaf Resort Bhor | Tents, Pods &amp; Bubble Domes</title>
+    <meta name="description"
+        content="Explore Lemon Leaf Resort's signature stays — Decathlon Tents, Glamping Pods, Luxury Bubble Domes &amp; Rajasthani Tents. Every escape near Pune, detailed." />
+    <meta name="keywords"
+        content="signature escapes lemon leaf, bubble dome bhor, glamping pod pune, rajasthani tent stay, luxury tent stay near pune" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+        .se-hero {
+            position: relative;
+            height: 45vh;
+            height: 45svh;
+            min-height: 380px;
+            max-height: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .se-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .se-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)),
+                linear-gradient(to bottom, rgba(53, 64, 36, 0.55), rgba(76, 61, 25, 0.65), rgba(53, 64, 36, 0.88));
+        }
+
+        .se-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 1.5rem;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .se-hero-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            line-height: 1.18;
+            color: var(--bone);
+            margin: 0 auto 1.2rem;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .se-hero-title em {
+            color: var(--tan);
+            font-style: italic;
+        }
+
+        .se-hero-sub {
+            color: rgba(255, 255, 255, 0.92);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .se-hero-scroll {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .se-hero-scroll span {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(229, 215, 196, 0.6);
+        }
+
+        /* ── QUICK JUMP NAV (sticky pills to jump between the 4 escapes) ── */
+        .se-jump-section {
+            background: var(--bone-lt);
+            border-bottom: 1px solid rgba(207, 187, 153, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .se-jump-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            padding: 1rem 2rem;
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .se-jump-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--cafe);
+            background: var(--white);
+            border: 1px solid rgba(207, 187, 153, 0.45);
+            border-radius: 999px;
+            padding: 0.55rem 1.15rem;
+            transition: var(--trans);
+        }
+
+        .se-jump-pill i {
+            color: var(--moss);
+            font-size: 0.85rem;
+        }
+
+        .se-jump-pill:hover {
+            background: var(--kombu);
+            border-color: var(--kombu);
+            color: var(--bone);
+        }
+
+        .se-jump-pill:hover i {
+            color: var(--tan);
+        }
+
+        /* ── ESCAPE DETAIL BLOCKS (alternating image/content, full detail per stay) ── */
+        .se-escape {
+            padding: 6rem 0;
+        }
+
+        .se-escape:nth-child(even) {
+            background: var(--bone-lt);
+        }
+
+        .se-escape:nth-child(odd) {
+            background: var(--bone);
+        }
+
+        .se-escape-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.5rem;
+            align-items: center;
+        }
+
+        .se-escape.reverse .se-escape-grid {
+            direction: rtl;
+        }
+
+        .se-escape.reverse .se-escape-grid>* {
+            direction: ltr;
+        }
+
+        .se-escape-gallery {
+            position: relative;
+        }
+
+        .se-escape-main-img {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow);
+            margin-bottom: 0.7rem;
+        }
+
+        .se-escape-thumbs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+        }
+
+        .se-escape-thumb {
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            box-shadow: var(--shadow);
+        }
+
+        .se-escape-tag {
+            position: absolute;
+            top: 1.2rem;
+            left: 1.2rem;
+            background: var(--tan);
+            color: var(--cafe);
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.45rem 1rem;
+            border-radius: 3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            z-index: 2;
+        }
+
+        .se-escape-content .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .se-escape-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .se-escape-content h2 em {
+            color: var(--moss);
+        }
+
+        .se-escape-content>p {
+            margin-bottom: 1.4rem;
+        }
+
+        .se-feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .se-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.84rem;
+            color: var(--cafe);
+            padding: 0.55rem 0.4rem;
+        }
+
+        .se-feature-item i {
+            color: var(--moss);
+            font-size: 0.85rem;
+            width: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .se-pricing-card {
+            background: var(--white);
+            border: 1px solid rgba(207, 187, 153, 0.4);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.4rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.6rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .se-pricing-row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .se-pricing-label {
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--moss);
+            margin-bottom: 0.2rem;
+        }
+
+        .se-pricing-val {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--cafe);
+        }
+
+        .se-pricing-val small {
+            font-size: 0.7rem;
+            color: var(--moss);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .se-pricing-divider {
+            width: 1px;
+            height: 36px;
+            background: rgba(207, 187, 153, 0.5);
+        }
+
+        .se-escape-ctas {
+            display: flex;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        /* ── COMPARISON TABLE ── */
+        .se-compare-section {
+            padding: 6rem 0;
+            background: var(--kombu);
+        }
+
+        .se-compare-section .section-header h2 {
+            color: var(--bone);
+        }
+
+        .se-compare-wrap {
+            overflow-x: auto;
+            border-radius: var(--radius);
+            border: 1px solid rgba(207, 187, 153, 0.2);
+        }
+
+        .se-compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 720px;
+            background: rgba(229, 215, 196, 0.04);
+        }
+
+        .se-compare-table th,
+        .se-compare-table td {
+            padding: 1rem 1.3rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(207, 187, 153, 0.15);
+            font-size: 0.85rem;
+        }
+
+        .se-compare-table thead th {
+            background: rgba(229, 215, 196, 0.08);
+            color: var(--bone);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .se-compare-table thead th:first-child {
+            color: var(--tan);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .se-compare-table tbody td {
+            color: rgba(229, 215, 196, 0.85);
+        }
+
+        .se-compare-table tbody td:first-child {
+            color: var(--tan);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .se-compare-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .se-compare-table .se-check {
+            color: var(--moss);
+        }
+
+        .se-compare-table .se-dash {
+            color: rgba(207, 187, 153, 0.35);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .se-escape-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .se-escape.reverse .se-escape-grid {
+                direction: ltr;
+            }
+
+            .se-feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .se-hero {
+                height: 60svh;
+                min-height: 420px;
+            }
+
+            .se-escape {
+                padding: 4rem 0;
+            }
+
+            .se-jump-bar {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .se-jump-pill {
+                flex-shrink: 0;
+            }
+
+            .se-pricing-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .se-pricing-divider {
+                display: none;
+            }
+
+            .se-compare-section {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .se-hero {
+                min-height: 380px;
+            }
+
+            .se-hero-title {
+                font-size: 2rem;
+            }
+
+            .se-escape-thumbs {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="/images/logo/lemon-leaf-logo.png" alt="Lemon Leaf Resort"
+                    onerror="this.style.display='none'" />
+            </div>
+            <div class="preloader-name">Lemon Leaf Resort</div>
+            <div class="preloader-tagline">Signature Escapes</div>
+            <div class="preloader-bar">
+                <div class="preloader-fill" id="preloaderFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar"></div>
+
+    <!-- SIGNATURE HERO -->
+    <section class="se-hero" id="signature-hero">
+        <div class="se-hero-bg" style="background-image:url('/images/hero-banner/glamping-pod.jpg')"></div>
+        <div class="se-hero-overlay"></div>
+        <div class="se-hero-content">
+            <div class="hero-eyebrow reveal-up">Signature Escapes</div>
+            <h1 class="se-hero-title reveal-up delay-1">Four Ways to Stay.<em> One Forest to Belong To.</em>
+            </h1>
+            <p class="se-hero-sub reveal-up delay-2">From raw adventure tents to a fully transparent bubble dome —
+                every Lemon Leaf escape is built to put you closer to the lake, the sky, and the silence.</p>
+        </div>
+        <div class="se-hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- QUICK JUMP NAV -->
+    <section class="se-jump-section">
+        <div class="se-jump-bar">
+            <a href="#decathlon-tent" class="se-jump-pill"><i class="fa-solid fa-campground"></i> Decathlon
+                Tent</a>
+            <a href="#glamping-pod" class="se-jump-pill"><i class="fa-solid fa-tent"></i> Glamping Pod</a>
+            <a href="#bubble-dome" class="se-jump-pill"><i class="fa-solid fa-star"></i> Luxury Bubble Dome</a>
+            <a href="#rajasthani-tent" class="se-jump-pill"><i class="fa-solid fa-torii-gate"></i> Rajasthani
+                Tent</a>
+            <a href="#se-compare" class="se-jump-pill"><i class="fa-solid fa-table-list"></i> Compare All</a>
+        </div>
+    </section>
+
+    <!-- DECATHLON TENT -->
+    <section class="se-escape" id="decathlon-tent">
+        <div class="container se-escape-grid">
+            <div class="se-escape-gallery reveal-left">
+                <div class="se-escape-main-img">
+                    <span class="se-escape-tag"><i class="fa-solid fa-campground"></i> Adventure Stay</span>
+                    <img src="https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?w=900&q=80"
+                        alt="Decathlon Tent at Lemon Leaf Resort" loading="lazy" />
+                </div>
+                <div class="se-escape-thumbs">
+                    <div class="se-escape-thumb"><img
+                            src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=300&q=80"
+                            alt="Decathlon tent campsite" loading="lazy" /></div>
+                    <div class="se-escape-thumb"><img
+                            src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=300&q=80"
+                            alt="Forest near Decathlon tents" loading="lazy" /></div>
+                    <div class="se-escape-thumb"><img
+                            src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=300&q=80"
+                            alt="Evening bonfire at tent stay" loading="lazy" /></div>
+                </div>
+            </div>
+            <div class="se-escape-content reveal-right">
+                <span class="eyebrow"><i class="fa-solid fa-campground"></i> Escape 01</span>
+                <h2>The Decathlon Tent<br /><em>Raw, Real, Unforgettable</em></h2>
+                <p>For travellers who want nature with zero filters. Our adventure-grade Decathlon tents sit closest
+                    to the forest floor — sturdy canvas walls, the sound of crickets at night, and just enough
+                    comfort to make roughing it feel intentional, not accidental.</p>
+                <div class="se-feature-grid">
+                    <div class="se-feature-item"><i class="fa-solid fa-glass-water"></i> Welcome drink on arrival</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-mug-hot"></i> Hi Tea &amp; snacks</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-utensils"></i> Buffet Dinner (Veg &amp;
+                        Non-Veg)</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-sun"></i> Morning breakfast buffet</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-person-swimming"></i> Infinity Pool access
+                    </div>
+                    <div class="se-feature-item"><i class="fa-solid fa-fire"></i> All resort activities included
+                    </div>
+                </div>
+                <div class="se-pricing-card">
+                    <div class="se-pricing-row">
+                        <span class="se-pricing-label">Mon – Thu</span>
+                        <span class="se-pricing-val">₹1,750 <small>/person</small></span>
+                    </div>
+                    <div class="se-pricing-divider"></div>
+                    <div class="se-pricing-row">
+                        <span class="se-pricing-label">Fri – Sun</span>
+                        <span class="se-pricing-val">₹2,000 <small>/person</small></span>
+                    </div>
+                </div>
+                <div class="se-escape-ctas">
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-primary">Book on
+                        WhatsApp</a>
+                    <a href="index.html#book" class="btn-outline">Check Dates</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLAMPING POD -->
+    <section class="se-escape reverse" id="glamping-pod">
+        <div class="container se-escape-grid">
+            <div class="se-escape-content reveal-left">
+                <span class="eyebrow"><i class="fa-solid fa-tent"></i> Escape 02 · Most Popular</span>
+                <h2>The Glamping Pod<br /><em>Comfort Meets the Wild</em></h2>
+                <p>Our most-booked stay, and for good reason. The Glamping Pod is the sweet spot — private,
+                    well-equipped, and cozy enough for a slow morning in bed, but still close enough to nature that
+                    you wake up to birdsong instead of a fan.</p>
+                <div class="se-feature-grid">
+                    <div class="se-feature-item"><i class="fa-solid fa-glass-water"></i> Welcome drink on arrival</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-mug-hot"></i> Hi Tea &amp; snacks</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-utensils"></i> Buffet Dinner (Veg &amp;
+                        Non-Veg)</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-sun"></i> Morning breakfast buffet</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-shower"></i> Hot water &amp; toiletries</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-dice"></i> Pool &amp; game access</div>
+                </div>
+                <div class="se-pricing-card">
+                    <div class="se-pricing-row">
+                        <span class="se-pricing-label">Mon – Thu</span>
+                        <span class="se-pricing-val">₹2,200 <small>/person</small></span>
+                    </div>
+                    <div class="se-pricing-divider"></div>
+                    <div class="se-pricing-row">
+                        <span class="se-pricing-label">Fri – Sun</span>
+                        <span class="se-pricing-val">₹2,550 <small>/person</small></span>
+                    </div>
+                </div>
+                <div class="se-escape-ctas">
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-primary">Book on
+                        WhatsApp</a>
+                    <a href="index.html#book" class="btn-outline">Check Dates</a>
+                </div>
+            </div>
+            <div class="se-escape-gallery reveal-right">
+                <div class="se-escape-main-img">
+                    <span class="se-escape-tag"><i class="fa-solid fa-fire-flame-simple"></i> Most Popular</span>
+                    <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=900&q=80"
+                        alt="Glamping Pod at Lemon Leaf Resort" loading="lazy" />
+                </div>
+                <div class="se-escape-thumbs">
+                    <div class="se-escape-thumb"><img
+                            src="https://images.unsplash.com/photo-1533632359083-0185df1be85d?w=300&q=80"
+                            alt="Glamping pod interior" loading="lazy" /></div>
+                    <div class="se-escape-thumb"><img
+                            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=80"
+                            alt="Glamping pod surroundings" loading="lazy" /></div>
+                    <div class="se-escape-thumb"><img
+                            src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=300&q=80"
+                            alt="Pod deck view" loading="lazy" /></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LUXURY BUBBLE DOME -->
+    <section class="se-escape" id="bubble-dome">
+        <div class="container se-escape-grid">
+            <div class="se-escape-gallery reveal-left">
+                <div class="se-escape-main-img">
+                    <span class="se-escape-tag"><i class="fa-solid fa-sparkles"></i> Signature Stay</span>
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80"
+                        alt="Luxury Bubble Dome at Lemon Leaf Resort" loading="lazy" />
+                </div>
+                <div class="se-escape-thumbs">
+                    <div class="se-escape-thumb"><img
+                            src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=300&q=80"
+                            alt="Bubble dome at night" loading="lazy" /></div>
+                    <div class="se-escape-thumb"><img
+                            src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=300&q=80"
+                            alt="Bubble dome misty view" loading="lazy" /></div>
+                    <div class="se-escape-thumb"><img
+                            src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=300&q=80"
+                            alt="Bubble dome interior" loading="lazy" /></div>
+                </div>
+            </div>
+            <div class="se-escape-content reveal-right">
+                <span class="eyebrow"><i class="fa-solid fa-star"></i> Escape 03 · Our Crown Jewel</span>
+                <h2>The Luxury Bubble Dome<br /><em>Sleep Under the Sky</em></h2>
+                <p>Floor-to-ceiling, fully transparent walls that erase the line between your bed and the night
+                    sky. The Bubble Dome is the stay people travel from Mumbai just to experience once — wake up to
+                    a misty Sahyadri sunrise without leaving your pillow.</p>
+                <div class="se-feature-grid">
+                    <div class="se-feature-item"><i class="fa-solid fa-glass-water"></i> Welcome drink on arrival</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-mug-hot"></i> Hi Tea &amp; snacks</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-utensils"></i> Buffet Dinner (Veg &amp;
+                        Non-Veg)</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-sun"></i> Morning breakfast buffet</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-bath"></i> Bath, pool towel, shower gel,
+                        shampoo</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-wifi"></i> Hot water, Wi-Fi &amp; all
+                        activities</div>
+                </div>
+                <div class="se-pricing-card">
+                    <div class="se-pricing-row">
+                        <span class="se-pricing-label">Mon – Thu</span>
+                        <span class="se-pricing-val">₹4,000 <small>/person</small></span>
+                    </div>
+                    <div class="se-pricing-divider"></div>
+                    <div class="se-pricing-row">
+                        <span class="se-pricing-label">Fri – Sun</span>
+                        <span class="se-pricing-val">₹5,000 <small>/person</small></span>
+                    </div>
+                </div>
+                <div class="se-escape-ctas">
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-primary">Book on
+                        WhatsApp</a>
+                    <a href="index.html#book" class="btn-outline">Check Dates</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RAJASTHANI TENT -->
+    <section class="se-escape reverse" id="rajasthani-tent">
+        <div class="container se-escape-grid">
+            <div class="se-escape-content reveal-left">
+                <span class="eyebrow"><i class="fa-solid fa-torii-gate"></i> Escape 04 · Royal Experience</span>
+                <h2>The Rajasthani Tent<br /><em>A Touch of Royal Grandeur</em></h2>
+                <p>Vibrant furnishings, rich fabrics, and a regal silhouette inspired by desert royalty — set down
+                    in the middle of a Sahyadri forest. The Rajasthani Tent is for guests who want their stay to
+                    feel like an occasion, not just an overnight stop.</p>
+                <div class="se-feature-grid">
+                    <div class="se-feature-item"><i class="fa-solid fa-glass-water"></i> Welcome drink on arrival</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-mug-hot"></i> Hi Tea &amp; snacks</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-utensils"></i> Buffet Dinner (Veg &amp;
+                        Non-Veg)</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-sun"></i> Morning breakfast buffet</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-shower"></i> Hot water &amp; toiletries</div>
+                    <div class="se-feature-item"><i class="fa-solid fa-fire"></i> All resort activities included
+                    </div>
+                </div>
+                <div class="se-pricing-card">
+                    <div class="se-pricing-row">
+                        <span class="se-pricing-label">Mon – Thu</span>
+                        <span class="se-pricing-val">₹3,750 <small>/person</small></span>
+                    </div>
+                    <div class="se-pricing-divider"></div>
+                    <div class="se-pricing-row">
+                        <span class="se-pricing-label">Fri – Sun</span>
+                        <span class="se-pricing-val">₹4,500 <small>/person</small></span>
+                    </div>
+                </div>
+                <div class="se-escape-ctas">
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-primary">Book on
+                        WhatsApp</a>
+                    <a href="index.html#book" class="btn-outline">Check Dates</a>
+                </div>
+            </div>
+            <div class="se-escape-gallery reveal-right">
+                <div class="se-escape-main-img">
+                    <span class="se-escape-tag"><i class="fa-solid fa-torii-gate"></i> Royal Experience</span>
+                    <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=900&q=80"
+                        alt="Rajasthani Tent at Lemon Leaf Resort" loading="lazy" />
+                </div>
+                <div class="se-escape-thumbs">
+                    <div class="se-escape-thumb"><img
+                            src="https://images.unsplash.com/photo-1533632359083-0185df1be85d?w=300&q=80"
+                            alt="Rajasthani tent interior" loading="lazy" /></div>
+                    <div class="se-escape-thumb"><img
+                            src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=300&q=80"
+                            alt="Rajasthani tent surroundings" loading="lazy" /></div>
+                    <div class="se-escape-thumb"><img
+                            src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=300&q=80"
+                            alt="Evening view near Rajasthani tent" loading="lazy" /></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARE ALL -->
+    <section class="se-compare-section" id="se-compare">
+        <div class="container">
+            <div class="section-header section-header--light reveal-up">
+                <span class="eyebrow eyebrow--light">Side by Side</span>
+                <h2>Compare All<br /><em>Four Escapes</em></h2>
+                <p>Not sure which one's for you? Here's everything at a glance.</p>
+            </div>
+            <div class="se-compare-wrap reveal-up">
+                <table class="se-compare-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th><i class="fa-solid fa-campground"></i> Decathlon Tent</th>
+                            <th><i class="fa-solid fa-tent"></i> Glamping Pod</th>
+                            <th><i class="fa-solid fa-star"></i> Bubble Dome</th>
+                            <th><i class="fa-solid fa-torii-gate"></i> Rajasthani Tent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mon–Thu Price</td>
+                            <td>₹1,750 /person</td>
+                            <td>₹2,200 /person</td>
+                            <td>₹4,000 /person</td>
+                            <td>₹3,750 /person</td>
+                        </tr>
+                        <tr>
+                            <td>Fri–Sun Price</td>
+                            <td>₹2,000 /person</td>
+                            <td>₹2,550 /person</td>
+                            <td>₹5,000 /person</td>
+                            <td>₹4,500 /person</td>
+                        </tr>
+                        <tr>
+                            <td>Welcome Drink &amp; Hi Tea</td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Buffet Dinner &amp; Breakfast</td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Hot Water</td>
+                            <td><i class="fa-solid fa-minus se-dash"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Toiletries &amp; Towels</td>
+                            <td><i class="fa-solid fa-minus se-dash"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Wi-Fi Access</td>
+                            <td><i class="fa-solid fa-minus se-dash"></i></td>
+                            <td><i class="fa-solid fa-minus se-dash"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-minus se-dash"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Premium Bath Amenities</td>
+                            <td><i class="fa-solid fa-minus se-dash"></i></td>
+                            <td><i class="fa-solid fa-minus se-dash"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-minus se-dash"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Infinity Pool &amp; Activities</td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                            <td><i class="fa-solid fa-check se-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Best Suited For</td>
+                            <td>Solo &amp; budget travellers</td>
+                            <td>Couples &amp; friends</td>
+                            <td>Honeymoons &amp; celebrations</td>
+                            <td>Families &amp; special occasions</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER (reused pattern from homepage/about) -->
+    <section class="cta-banner">
+        <div class="cta-banner-bg"></div>
+        <div class="cta-banner-inner">
+            <div class="cta-content reveal-up">
+                <span class="eyebrow eyebrow--light"><i class="fa-solid fa-location-dot"></i> Bhor, Pune · Just 55
+                    km Away</span>
+                <h2>Found Your<br /><em>Perfect Escape?</em></h2>
+                <p>Slots fill up fast on weekends. Lock in your dates before someone else does.</p>
+                <div class="cta-actions">
+                    <a href="index.html#book" class="btn-primary">Check Availability</a>
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-whatsapp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+                        </svg>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-fab" target="_blank" rel="noopener"
+        aria-label="Chat on WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+            <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+        </svg>
+    </a>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

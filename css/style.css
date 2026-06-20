@@ -414,6 +414,18 @@ p {
     width: 100%;
 }
 
+.nav-links a.active,
+.mm-link.active {
+    color: var(--bone);
+    font-weight: 700;
+}
+
+.nav-links a.active::after,
+.mm-link.active::after {
+    width: 100%;
+    background: var(--bone);
+}
+
 .nav-cta {
     background: var(--tan);
     color: var(--cafe);
@@ -2198,206 +2210,6 @@ p {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-/* ── CONTACT ── */
-.contact-section {
-    padding: 6rem 0;
-    background: var(--bone);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 5rem;
-    align-items: start;
-}
-
-.contact-info h2 {
-    margin-bottom: 1.5rem;
-}
-
-.contact-info h2 em {
-    color: var(--moss);
-}
-
-.contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 1.4rem;
-    margin-bottom: 2rem;
-}
-
-.cd-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(207, 187, 153, 0.25);
-    transition: var(--trans);
-}
-
-.cd-item:last-child {
-    border-bottom: none;
-}
-
-.cd-item:hover {
-    transform: translateX(6px);
-}
-
-.cd-icon {
-    width: 3rem;
-    height: 3rem;
-    min-width: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(136, 144, 99, 0.12);
-    border: 1px solid rgba(136, 144, 99, 0.15);
-    color: var(--moss);
-    font-size: 1rem;
-    flex-shrink: 0;
-    transition: var(--trans);
-}
-
-.cd-item:hover .cd-icon {
-    background: var(--moss);
-    color: var(--white);
-    transform: scale(1.08);
-}
-
-.cd-icon i {
-    line-height: 1;
-}
-
-.cd-item strong {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--moss);
-    margin-bottom: 0.3rem;
-}
-
-.cd-item p {
-    font-size: 0.88rem;
-}
-
-.cd-item a {
-    color: var(--cafe);
-    transition: color var(--trans);
-}
-
-.cd-item a:hover {
-    color: var(--kombu);
-}
-
-.contact-social {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.contact-social a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.75rem 1rem;
-    background: rgba(136, 144, 99, 0.1);
-    border: 1px solid rgba(136, 144, 99, 0.15);
-    border-radius: 999px;
-    color: var(--cafe);
-    font-size: 0.82rem;
-    font-weight: 500;
-    transition: var(--trans);
-}
-
-.contact-social a i {
-    color: var(--moss);
-    font-size: 1rem;
-    transition: var(--trans);
-}
-
-.contact-social a:hover {
-    background: var(--moss);
-    border-color: var(--moss);
-    color: var(--white);
-    transform: translateY(-2px);
-}
-
-.contact-social a:hover i {
-    color: var(--white);
-}
-
-.contact-form-wrap {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 2.5rem;
-    box-shadow: var(--shadow);
-    border: 1px solid rgba(207, 187, 153, 0.3);
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-    margin-bottom: 1.2rem;
-}
-
-.form-group label {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--moss);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    border: 1.5px solid rgba(207, 187, 153, 0.45);
-    border-radius: 6px;
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-    color: var(--cafe);
-    background: var(--bone-lt);
-    outline: none;
-    transition: border-color var(--trans);
-    width: 100%;
-    -webkit-appearance: none;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: var(--moss);
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
-.form-success {
-    display: none;
-    margin-top: 1rem;
-    padding: 0.9rem 1.2rem;
-    background: rgba(53, 64, 36, 0.08);
-    border-radius: 6px;
-    color: var(--kombu);
-    font-size: 0.85rem;
-    text-align: center;
-}
-
-.form-success.visible {
-    display: block;
 }
 
 /* ── FOOTER ── */

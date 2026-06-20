@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Lemon Leaf Resort Bhor | Our Story &amp; Founders</title>
+    <meta name="description"
+        content="Meet the founders of Lemon Leaf Resort, Bhor - Amol Patil, Harish Nair &amp; Prasoon Dangra. Discover the story behind Pune's premier luxury glamping escape." />
+    <meta name="keywords"
+        content="about lemon leaf resort, lemon leaf resort founders, luxury resort bhor owners, glamping resort pune story" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+        .ab-hero {
+            position: relative;
+            height: 45vh;
+            height: 45svh;
+            min-height: 380px;
+            max-height: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .ab-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ab-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)),
+                linear-gradient(to bottom, rgba(53, 64, 36, 0.55), rgba(76, 61, 25, 0.65), rgba(53, 64, 36, 0.88));
+        }
+
+        .ab-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 1.5rem;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .ab-hero-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            line-height: 1.18;
+            color: var(--bone);
+            margin: 0 auto 1.2rem;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .ab-hero-title em {
+            color: var(--tan);
+            font-style: italic;
+        }
+
+        .ab-hero-sub {
+            color: rgba(255, 255, 255, 0.92);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .ab-hero-scroll {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ab-hero-scroll span {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(229, 215, 196, 0.6);
+        }
+
+        /* ── OUR STORY (mirrors .about-strip pattern from homepage) ── */
+        .story-section {
+            padding: 6rem 0;
+            background: var(--bone-lt);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .story-img-wrap {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: var(--shadow);
+        }
+
+        .story-badge {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            background: var(--tan);
+            color: var(--cafe);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.5rem 1.1rem;
+            border-radius: 3px;
+        }
+
+        .story-content h2 {
+            margin-bottom: 1.2rem;
+        }
+
+        .story-content h2 em {
+            color: var(--moss);
+        }
+
+        .story-content p {
+            margin-bottom: 1.1rem;
+        }
+
+        .story-content .btn-outline {
+            margin-top: 0.6rem;
+        }
+
+        /* ── VALUES / PHILOSOPHY (dark band, mirrors .packages-section) ── */
+        .values-section {
+            padding: 6rem 0;
+            background: var(--kombu);
+        }
+
+        .values-section .section-header h2 {
+            color: var(--bone);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .value-card {
+            background: rgba(229, 215, 196, 0.07);
+            border: 1px solid rgba(207, 187, 153, 0.18);
+            border-radius: var(--radius);
+            padding: 2.4rem 2rem;
+            text-align: center;
+            transition: transform var(--trans), background var(--trans), border-color var(--trans);
+        }
+
+        .value-card:hover {
+            transform: translateY(-6px);
+            background: rgba(229, 215, 196, 0.12);
+            border-color: rgba(207, 187, 153, 0.35);
+        }
+
+        .value-icon {
+            width: 4.2rem;
+            height: 4.2rem;
+            margin: 0 auto 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(136, 144, 99, 0.15);
+            border: 1px solid rgba(207, 187, 153, 0.2);
+            color: var(--tan);
+            font-size: 1.5rem;
+            transition: var(--trans);
+        }
+
+        .value-card:hover .value-icon {
+            background: var(--moss);
+            border-color: var(--moss);
+            color: var(--white);
+            transform: scale(1.08);
+        }
+
+        .value-card h4 {
+            color: var(--bone);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .value-card p {
+            color: rgba(207, 187, 153, 0.82);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        /* ── FOUNDERS (signature section - premium card treatment) ── */
+        .founders-section {
+            padding: 6rem 0;
+            background: var(--bone);
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+        }
+
+        .founder-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(207, 187, 153, 0.3);
+            transition: transform var(--trans), box-shadow var(--trans);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .founder-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 56px rgba(76, 61, 25, 0.2);
+        }
+
+        .founder-photo {
+            position: relative;
+            height: 340px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .founder-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(53, 64, 36, 0) 55%, rgba(53, 64, 36, 0.55) 100%);
+        }
+
+        .founder-photo img {
+            transition: transform 0.7s ease;
+        }
+
+        .founder-card:hover .founder-photo img {
+            transform: scale(1.06);
+        }
+
+        .founder-body {
+            padding: 1.8rem 1.7rem 2rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .founder-body h3 {
+            font-size: 1.5rem;
+            color: var(--cafe);
+            margin-bottom: 0.25rem;
+        }
+
+        .founder-role {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--moss);
+            margin-bottom: 1rem;
+        }
+
+        .founder-body p {
+            font-size: 0.86rem;
+            line-height: 1.7;
+            margin-bottom: 1.3rem;
+        }
+
+        .founder-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--kombu);
+            line-height: 1.6;
+            padding-top: 1.1rem;
+            border-top: 1px dashed rgba(207, 187, 153, 0.6);
+            margin-top: auto;
+        }
+
+        /* ── JOURNEY / MILESTONES (vertical timeline - order genuinely carries meaning here, it's a chronology) ── */
+        .journey-section {
+            padding: 6rem 0;
+            background: var(--bone-lt);
+        }
+
+        .journey-section .section-header h2 em {
+            color: var(--moss);
+        }
+
+        .journey-track {
+            max-width: 760px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 2.2rem;
+        }
+
+        .journey-track::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            bottom: 6px;
+            left: 6px;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--tan), rgba(207, 187, 153, 0.25));
+        }
+
+        .journey-item {
+            position: relative;
+            padding-bottom: 2.4rem;
+        }
+
+        .journey-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .journey-dot {
+            position: absolute;
+            left: -2.2rem;
+            top: 6px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--tan);
+            border: 3px solid var(--bone-lt);
+            box-shadow: 0 0 0 1px rgba(207, 187, 153, 0.5);
+        }
+
+        .journey-year {
+            display: inline-block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--moss);
+            margin-bottom: 0.3rem;
+        }
+
+        .journey-body h4 {
+            font-size: 1.2rem;
+            color: var(--cafe);
+            margin-bottom: 0.5rem;
+        }
+
+        .journey-body p {
+            font-size: 0.88rem;
+            line-height: 1.7;
+            max-width: 560px;
+        }
+
+        /* ── ABOUT-PAGE STATS STRIP (reuses .hero-stats / .hero-stat from style.css; only the wrapper differs) ── */
+        .ab-stat-section {
+            background: var(--kombu);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .story-img-wrap {
+                aspect-ratio: 16/9;
+                max-height: 380px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .founders-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ab-hero {
+                height: 60svh;
+                min-height: 420px;
+            }
+
+            .story-section,
+            .values-section,
+            .founders-section,
+            .journey-section {
+                padding: 4rem 0;
+            }
+
+            .founders-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .founder-photo {
+                height: 300px;
+            }
+
+            .journey-track {
+                padding-left: 1.8rem;
+            }
+
+            .journey-dot {
+                left: -1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ab-hero {
+                min-height: 380px;
+            }
+
+            .ab-hero-title {
+                font-size: 2rem;
+            }
+
+            .value-card {
+                padding: 2rem 1.4rem;
+            }
+
+            .founder-photo {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="/images/logo/lemon-leaf-logo.png" alt="Lemon Leaf Resort"
+                    onerror="this.style.display='none'" />
+            </div>
+            <div class="preloader-name">Lemon Leaf Resort</div>
+            <div class="preloader-tagline">About Us</div>
+            <div class="preloader-bar">
+                <div class="preloader-fill" id="preloaderFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar"></div>
+
+    <!-- ABOUT HERO -->
+    <section class="ab-hero" id="about-hero">
+        <div class="ab-hero-bg" style="background-image:url('/images/hero-banner/infinity-pool.jpg')"></div>
+        <div class="ab-hero-overlay"></div>
+        <div class="ab-hero-content">
+            <div class="hero-eyebrow reveal-up">Our Story</div>
+            <h1 class="ab-hero-title reveal-up delay-1">Three Friends.<em> One Forgotten Forest.</em></h1>
+            <p class="ab-hero-sub reveal-up delay-2">Lemon Leaf Resort began as a weekend conversation between three
+                friends who wanted Pune to have a getaway that didn't feel like a getaway from itself.</p>
+        </div>
+        <div class="ab-hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="story-section" id="story">
+        <div class="container story-grid">
+            <div class="story-img-wrap reveal-left">
+                <img src="https://images.unsplash.com/photo-1533632359083-0185df1be85d?w=800&q=80"
+                    alt="Lemon Leaf Resort founders vision" loading="lazy" />
+                <div class="story-badge">Est. 2023</div>
+            </div>
+            <div class="story-content reveal-right">
+                <span class="eyebrow">How It Started</span>
+                <h2>A Promise Made<br /><em>Over a Bonfire</em></h2>
+                <p>It started, fittingly, around a fire. Three friends - tired of the same hill-station drive, the
+                    same overbooked resorts, the same forgettable weekends - sat at a campsite outside Bhor and asked
+                    a simple question: why does relaxing always feel like work?</p>
+                <p>Six months later, on a five-acre stretch of land in Wadhane, that question became Lemon Leaf
+                    Resort. Not a resort that imitates the forest with a few potted plants, but one built inside it
+                    - where the infinity pool meets the lake horizon, where bubble domes let the sky in, and where
+                    every guest leaves having actually disconnected, not just photographed disconnecting.</p>
+                <p>What we built is simple in spirit: a place close enough to Pune for a spontaneous weekend, and
+                    far enough from it to forget you have a phone.</p>
+                <a href="#founders" class="btn-outline">Meet the Founders</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES / PHILOSOPHY -->
+    <section class="values-section" id="philosophy">
+        <div class="container">
+            <div class="section-header section-header--light reveal-up">
+                <span class="eyebrow eyebrow--light">What We Believe</span>
+                <h2>Three Ideas<br /><em>Behind Every Decision</em></h2>
+                <p>Everything at Lemon Leaf - from the menu to the mattress - gets filtered through these three
+                    questions before it becomes part of the resort.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card reveal-up">
+                    <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h4>Nature First, Always</h4>
+                    <p>We didn't clear the land to build the resort - we built the resort around the land. Every
+                        tent, pod, and dome sits where it disturbs the least and reveals the most.</p>
+                </div>
+                <div class="value-card reveal-up delay-1">
+                    <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h4>Hospitality, Not Performance</h4>
+                    <p>We'd rather have one genuinely warm conversation at check-in than a hundred scripted ones. Our
+                        team is local, and they treat the resort like their own backyard - because for many of
+                        them, it is.</p>
+                </div>
+                <div class="value-card reveal-up delay-2">
+                    <div class="value-icon"><i class="fa-solid fa-paw"></i></div>
+                    <h4>Everyone's Invited</h4>
+                    <p>Families, couples, friend groups, and yes - your dog. We built Lemon Leaf to be the resort we
+                        wished existed when we were the ones planning the trip.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDERS -->
+    <section class="founders-section" id="founders">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="eyebrow">The People Behind Lemon Leaf</span>
+                <h2>Three Founders.<br /><em>One Shared Obsession.</em></h2>
+                <p>Different backgrounds, the same restlessness for a better weekend. Here's who you're actually
+                    booking with.</p>
+            </div>
+
+            <div class="founders-grid">
+
+                <div class="founder-card reveal-up">
+                    <div class="founder-photo">
+                        <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&q=80"
+                            alt="Amol Patil, Co-Founder, Lemon Leaf Resort" loading="lazy" />
+                    </div>
+                    <div class="founder-body">
+                        <h3>Amol Patil</h3>
+                        <span class="founder-role">Co-Founder &amp; Operations</span>
+                        <p>Amol grew up an hour from Bhor and knows every back road, farmer, and fort guide within
+                            fifty kilometres. He runs the day-to-day at the resort - the person who makes sure the
+                            bonfire is lit on time and the breakfast buffet never runs short.</p>
+                        <div class="founder-quote">"This land taught me patience before it taught me business."</div>
+                    </div>
+                </div>
+
+                <div class="founder-card reveal-up delay-1">
+                    <div class="founder-photo">
+                        <img src="https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?w=500&q=80"
+                            alt="Harish Nair, Co-Founder, Lemon Leaf Resort" loading="lazy" />
+                    </div>
+                    <div class="founder-body">
+                        <h3>Harish Nair</h3>
+                        <span class="founder-role">Co-Founder &amp; Guest Experience</span>
+                        <p>Harish spent a decade in hospitality before deciding the industry needed fewer lobbies
+                            and more lakes. He designs every guest touchpoint at Lemon Leaf - from the welcome drink
+                            to the late-night bonfire playlist.</p>
+                        <div class="founder-quote">"A great stay isn't remembered for what it had. It's remembered
+                            for how it felt."</div>
+                    </div>
+                </div>
+
+                <div class="founder-card reveal-up delay-2">
+                    <div class="founder-photo">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80"
+                            alt="Prasoon Dangra, Co-Founder, Lemon Leaf Resort" loading="lazy" />
+                    </div>
+                    <div class="founder-body">
+                        <h3>Prasoon Dangra</h3>
+                        <span class="founder-role">Co-Founder &amp; Design</span>
+                        <p>Prasoon is the reason the bubble domes exist. Obsessed with the idea that a stay should
+                            look as good as it feels, he leads every design decision at the resort - from the tent
+                            layouts to the lighting around the infinity pool.</p>
+                        <div class="founder-quote">"We didn't want guests to admire the view. We wanted them to feel
+                            like part of it."</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MILESTONES / JOURNEY -->
+    <section class="journey-section" id="journey">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="eyebrow">Our Journey</span>
+                <h2>From an Idea<br /><em>to Wadhane's Skyline</em></h2>
+            </div>
+            <div class="journey-track">
+                <div class="journey-item reveal-up">
+                    <div class="journey-dot"></div>
+                    <div class="journey-body">
+                        <span class="journey-year">2022</span>
+                        <h4>The Bonfire Conversation</h4>
+                        <p>Amol, Harish, and Prasoon spend a weekend camping outside Bhor and sketch the first idea
+                            for Lemon Leaf on the back of a trail map.</p>
+                    </div>
+                </div>
+                <div class="journey-item reveal-up delay-1">
+                    <div class="journey-dot"></div>
+                    <div class="journey-body">
+                        <span class="journey-year">2023</span>
+                        <h4>Five Acres in Wadhane</h4>
+                        <p>The land is secured at Gat No. 13/4, Wadhane - chosen for its lake-facing slope and
+                            proximity to Rajgad and Torna forts. Construction of the first Decathlon tents begins.</p>
+                    </div>
+                </div>
+                <div class="journey-item reveal-up delay-2">
+                    <div class="journey-dot"></div>
+                    <div class="journey-body">
+                        <span class="journey-year">2023</span>
+                        <h4>Lemon Leaf Opens Its Gates</h4>
+                        <p>The resort welcomes its first guests with Glamping Pods and Decathlon Tents, the infinity
+                            pool, and the now-signature evening bonfire.</p>
+                    </div>
+                </div>
+                <div class="journey-item reveal-up delay-3">
+                    <div class="journey-dot"></div>
+                    <div class="journey-body">
+                        <span class="journey-year">2024</span>
+                        <h4>The Bubble Domes Arrive</h4>
+                        <p>Prasoon's long-pitched idea finally gets built - the Luxury Bubble Domes launch and
+                            quickly become the resort's most requested stay.</p>
+                    </div>
+                </div>
+                <div class="journey-item reveal-up">
+                    <div class="journey-dot"></div>
+                    <div class="journey-body">
+                        <span class="journey-year">2025</span>
+                        <h4>500+ Stays &amp; Counting</h4>
+                        <p>Lemon Leaf crosses 500 happy guests, adds the Rajasthani Tents, and starts planning a
+                            dedicated Kids Zone for the seasons ahead.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS STRIP (reused pattern from homepage) -->
+    <section class="hero-stat-section ab-stat-section">
+        <div class="hero-stats reveal-up">
+            <div class="hero-stat"><strong>3</strong><span>Founders, One Vision</span></div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat"><strong>5 Acres</strong><span>Forest &amp; Lake Reserve</span></div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat"><strong>500+</strong><span>Happy Guests</span></div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat"><strong>4</strong><span>Stay Experiences</span></div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat"><strong>55 km</strong><span>From Pune</span></div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER (reused pattern) -->
+    <section class="cta-banner">
+        <div class="cta-banner-bg"></div>
+        <div class="cta-banner-inner">
+            <div class="cta-content reveal-up">
+                <span class="eyebrow eyebrow--light"><i class="fa-solid fa-location-dot"></i> Bhor, Pune · Just 55
+                    km Away</span>
+                <h2>Come Meet Us<br /><em>in Person</em></h2>
+                <p>The best way to understand Lemon Leaf is to sit by our bonfire and ask us yourself. We'll save
+                    you a seat.</p>
+                <div class="cta-actions">
+                    <a href="index.html#book" class="btn-primary">Book a Stay</a>
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-whatsapp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+                        </svg>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/919876543210" class="whatsapp-fab" target="_blank" rel="noopener"
+        aria-label="Chat on WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+            <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+        </svg>
+    </a>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

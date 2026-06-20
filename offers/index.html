@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offers — Lemon Leaf Resort Bhor | Seasonal Deals &amp; Packages</title>
+    <meta name="description"
+        content="Current offers at Lemon Leaf Resort, Bhor — seasonal deals, weekday discounts, and group packages on glamping pods, bubble domes &amp; tents near Pune." />
+    <meta name="keywords"
+        content="lemon leaf resort offers, bhor resort discount, glamping deals pune, weekday resort offer near pune" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+        .of-hero {
+            position: relative;
+            height: 45vh;
+            height: 45svh;
+            min-height: 380px;
+            max-height: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .of-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .of-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)),
+                linear-gradient(to bottom, rgba(53, 64, 36, 0.55), rgba(76, 61, 25, 0.65), rgba(53, 64, 36, 0.88));
+        }
+
+        .of-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 1.5rem;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .of-hero-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            line-height: 1.18;
+            color: var(--bone);
+            margin: 0 auto 1.2rem;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .of-hero-title em {
+            color: var(--tan);
+            font-style: italic;
+        }
+
+        .of-hero-sub {
+            color: rgba(255, 255, 255, 0.92);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .of-hero-scroll {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .of-hero-scroll span {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(229, 215, 196, 0.6);
+        }
+
+        /* ── QUICK JUMP NAV (mirrors .se-jump-section / .ex-jump-section) ── */
+        .of-jump-section {
+            background: var(--bone-lt);
+            border-bottom: 1px solid rgba(207, 187, 153, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .of-jump-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            padding: 1rem 2rem;
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .of-jump-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--cafe);
+            background: var(--white);
+            border: 1px solid rgba(207, 187, 153, 0.45);
+            border-radius: 999px;
+            padding: 0.55rem 1.15rem;
+            transition: var(--trans);
+        }
+
+        .of-jump-pill i {
+            color: var(--moss);
+            font-size: 0.85rem;
+        }
+
+        .of-jump-pill:hover {
+            background: var(--kombu);
+            border-color: var(--kombu);
+            color: var(--bone);
+        }
+
+        .of-jump-pill:hover i {
+            color: var(--tan);
+        }
+
+        /* ── FEATURED OFFER BANNER (hero-style call-out for the top/best offer) ── */
+        .of-featured-section {
+            padding: 5rem 0 0;
+            background: var(--bone-lt);
+        }
+
+        .of-featured-card {
+            position: relative;
+            background: var(--cafe);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            box-shadow: var(--shadow);
+        }
+
+        .of-featured-img {
+            position: relative;
+            min-height: 320px;
+        }
+
+        .of-featured-img img {
+            height: 100%;
+        }
+
+        .of-featured-ribbon {
+            position: absolute;
+            top: 1.2rem;
+            left: 1.2rem;
+            background: var(--tan);
+            color: var(--cafe);
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.45rem 1rem;
+            border-radius: 3px;
+            z-index: 2;
+        }
+
+        .of-featured-body {
+            padding: 2.6rem 2.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .of-featured-body .eyebrow {
+            color: var(--tan);
+        }
+
+        .of-featured-body h2 {
+            color: var(--bone);
+            margin-bottom: 1rem;
+        }
+
+        .of-featured-body h2 em {
+            color: var(--tan);
+        }
+
+        .of-featured-body p {
+            color: rgba(229, 215, 196, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        .of-featured-discount {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .of-featured-discount strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--tan);
+            line-height: 1;
+        }
+
+        .of-featured-discount span {
+            font-size: 0.85rem;
+            color: rgba(229, 215, 196, 0.75);
+        }
+
+        .of-featured-meta {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.8rem;
+        }
+
+        .of-meta-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.76rem;
+            color: var(--bone);
+            background: rgba(229, 215, 196, 0.08);
+            border: 1px solid rgba(207, 187, 153, 0.25);
+            border-radius: 999px;
+            padding: 0.45rem 0.95rem;
+        }
+
+        .of-meta-pill i {
+            color: var(--tan);
+            font-size: 0.75rem;
+        }
+
+        /* ── OFFER CARDS GRID ── */
+        .of-grid-section {
+            padding: 6rem 0;
+            background: var(--bone-lt);
+        }
+
+        .of-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .of-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(207, 187, 153, 0.3);
+            transition: transform var(--trans), box-shadow var(--trans);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .of-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(76, 61, 25, 0.18);
+        }
+
+        .of-card-img {
+            position: relative;
+            height: 190px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .of-card-img img {
+            transition: transform 0.7s ease;
+        }
+
+        .of-card:hover .of-card-img img {
+            transform: scale(1.06);
+        }
+
+        .of-card-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--tan);
+            color: var(--cafe);
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.75rem;
+            border-radius: 3px;
+        }
+
+        .of-card-validity {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(53, 64, 36, 0.85);
+            color: var(--bone);
+            font-size: 0.62rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            padding: 0.3rem 0.7rem;
+            border-radius: 3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .of-card-body {
+            padding: 1.5rem 1.5rem 1.7rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .of-card-body h3 {
+            font-size: 1.25rem;
+            color: var(--cafe);
+            margin-bottom: 0.5rem;
+        }
+
+        .of-card-body p {
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .of-card-discount {
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .of-card-discount strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--moss);
+        }
+
+        .of-card-discount span {
+            font-size: 0.78rem;
+            color: var(--cafe);
+        }
+
+        .of-card-footer {
+            display: flex;
+            gap: 0.7rem;
+            margin-top: auto;
+        }
+
+        .of-card-footer .btn-sm,
+        .of-card-footer .btn-sm-outline {
+            flex: 1;
+        }
+
+        /* ── PROMO CODE STRIP ── */
+        .of-promo-section {
+            padding: 6rem 0;
+            background: var(--kombu);
+        }
+
+        .of-promo-section .section-header h2 {
+            color: var(--bone);
+        }
+
+        .of-promo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .of-promo-card {
+            background: rgba(229, 215, 196, 0.07);
+            border: 1px dashed rgba(207, 187, 153, 0.35);
+            border-radius: var(--radius);
+            padding: 1.8rem 1.6rem;
+            text-align: center;
+            transition: var(--trans);
+        }
+
+        .of-promo-card:hover {
+            background: rgba(229, 215, 196, 0.12);
+            border-color: var(--tan);
+        }
+
+        .of-promo-code {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--bone);
+            background: rgba(229, 215, 196, 0.1);
+            border: 1px solid rgba(207, 187, 153, 0.3);
+            border-radius: 8px;
+            padding: 0.6rem 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .of-promo-code i {
+            color: var(--tan);
+            font-size: 1rem;
+        }
+
+        .of-promo-card h4 {
+            color: var(--bone);
+            font-size: 1.02rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .of-promo-card p {
+            color: rgba(207, 187, 153, 0.82);
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+
+        /* ── TERMS / GOOD TO KNOW (mirrors .dn-info-grid / .amen-grid pattern) ── */
+        .of-terms-section {
+            padding: 5rem 0;
+            background: var(--bone);
+        }
+
+        .of-terms-list {
+            max-width: 760px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .of-terms-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: var(--white);
+            border: 1px solid rgba(207, 187, 153, 0.3);
+            border-radius: var(--radius);
+            padding: 1.1rem 1.4rem;
+        }
+
+        .of-terms-icon {
+            width: 2.4rem;
+            height: 2.4rem;
+            min-width: 2.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(136, 144, 99, 0.12);
+            color: var(--moss);
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        .of-terms-item p {
+            font-size: 0.86rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .of-featured-card {
+                grid-template-columns: 1fr;
+            }
+
+            .of-featured-img {
+                min-height: 260px;
+            }
+
+            .of-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .of-promo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .of-hero {
+                min-height: 340px;
+            }
+
+            .of-featured-section,
+            .of-grid-section,
+            .of-promo-section,
+            .of-terms-section {
+                padding: 4rem 0;
+            }
+
+            .of-jump-bar {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .of-jump-pill {
+                flex-shrink: 0;
+            }
+
+            .of-featured-body {
+                padding: 2rem 1.7rem;
+            }
+
+            .of-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .of-hero {
+                min-height: 320px;
+            }
+
+            .of-hero-title {
+                font-size: 2rem;
+            }
+
+            .of-featured-discount strong {
+                font-size: 2.4rem;
+            }
+
+            .of-card-footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="/images/logo/lemon-leaf-logo.png" alt="Lemon Leaf Resort"
+                    onerror="this.style.display='none'" />
+            </div>
+            <div class="preloader-name">Lemon Leaf Resort</div>
+            <div class="preloader-tagline">Offers</div>
+            <div class="preloader-bar">
+                <div class="preloader-fill" id="preloaderFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar"></div>
+
+    <!-- OFFERS HERO -->
+    <section class="of-hero" id="offers-hero">
+        <div class="of-hero-bg" style="background-image:url('/images/hero-banner/infinity-pool.jpg')"></div>
+        <div class="of-hero-overlay"></div>
+        <div class="of-hero-content">
+            <div class="hero-eyebrow reveal-up">Offers &amp; Packages</div>
+            <h1 class="of-hero-title reveal-up delay-1">Good Stays Deserve<em> Even Better Deals</em></h1>
+            <p class="of-hero-sub reveal-up delay-2">Seasonal deals, weekday discounts, and group packages — here's
+                how to make your Lemon Leaf escape even easier on the wallet.</p>
+        </div>
+        <div class="of-hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- QUICK JUMP NAV -->
+    <section class="of-jump-section">
+        <div class="of-jump-bar">
+            <a href="#featured-offer" class="of-jump-pill"><i class="fa-solid fa-tag"></i> Featured Offer</a>
+            <a href="#all-offers" class="of-jump-pill"><i class="fa-solid fa-grip"></i> All Offers</a>
+            <a href="#promo-codes" class="of-jump-pill"><i class="fa-solid fa-ticket"></i> Promo Codes</a>
+            <a href="#offer-terms" class="of-jump-pill"><i class="fa-solid fa-circle-info"></i> Terms</a>
+        </div>
+    </section>
+
+    <!-- FEATURED OFFER -->
+    <section class="of-featured-section" id="featured-offer">
+        <div class="container">
+            <div class="of-featured-card reveal-up">
+                <div class="of-featured-img">
+                    <span class="of-featured-ribbon"><i class="fa-solid fa-star"></i> Best Value</span>
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80"
+                        alt="Featured offer at Lemon Leaf Resort" loading="lazy" />
+                </div>
+                <div class="of-featured-body">
+                    <span class="eyebrow"><i class="fa-solid fa-tag"></i> Featured Offer</span>
+                    <!-- PLACEHOLDER: replace name, discount %, and copy with real featured offer -->
+                    <h2>Midweek Escape<br /><em>Stay More, Pay Less</em></h2>
+                    <div class="of-featured-discount">
+                        <strong>20% OFF</strong>
+                        <span>on Monday – Thursday stays</span>
+                    </div>
+                    <p>Book any stay type from Monday to Thursday and unlock our best weekday rate — the resort,
+                        the pool, and the bonfire, all with fewer crowds and a lighter bill.</p>
+                    <div class="of-featured-meta">
+                        <span class="of-meta-pill"><i class="fa-solid fa-calendar-days"></i> Valid: Mon – Thu</span>
+                        <span class="of-meta-pill"><i class="fa-solid fa-tent"></i> All stay types</span>
+                        <span class="of-meta-pill"><i class="fa-solid fa-clock"></i> PLACEHOLDER validity dates</span>
+                    </div>
+                    <div class="of-escape-ctas" style="display:flex; gap:0.9rem; flex-wrap:wrap;">
+                        <a href="https://wa.me/919876543210" target="_blank" rel="noopener"
+                            class="btn-primary">Claim This Offer</a>
+                        <a href="index.html#book" class="btn-ghost" style="border-color: rgba(207,187,153,0.6); color: var(--bone);">Check Dates</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALL OFFERS GRID -->
+    <section class="of-grid-section" id="all-offers">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="eyebrow">More Ways to Save</span>
+                <h2>All Current<br /><em>Offers &amp; Packages</em></h2>
+                <!-- PLACEHOLDER: replace with real intro copy once offers are confirmed -->
+                <p>From group bookings to early-bird rates — here's everything currently running at Lemon Leaf.</p>
+            </div>
+            <div class="of-grid">
+
+                <!-- PLACEHOLDER OFFER 1 -->
+                <div class="of-card reveal-up">
+                    <div class="of-card-img">
+                        <span class="of-card-tag">Group Booking</span>
+                        <span class="of-card-validity"><i class="fa-solid fa-clock"></i> PLACEHOLDER</span>
+                        <img src="https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?w=600&q=80"
+                            alt="Group booking offer at Lemon Leaf Resort" loading="lazy" />
+                    </div>
+                    <div class="of-card-body">
+                        <h3>Group Getaway Discount</h3>
+                        <div class="of-card-discount">
+                            <strong>15% OFF</strong>
+                            <span>for groups of 6 or more</span>
+                        </div>
+                        <!-- PLACEHOLDER -->
+                        <p>Travelling with friends? Book any 6+ stays together and unlock a flat discount across
+                            the whole group.</p>
+                        <div class="of-card-footer">
+                            <a href="https://wa.me/919876543210" target="_blank" rel="noopener"
+                                class="btn-sm">Enquire</a>
+                            <a href="index.html#book" class="btn-sm-outline">Check Dates</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLACEHOLDER OFFER 2 -->
+                <div class="of-card reveal-up delay-1">
+                    <div class="of-card-img">
+                        <span class="of-card-tag">Early Bird</span>
+                        <span class="of-card-validity"><i class="fa-solid fa-clock"></i> PLACEHOLDER</span>
+                        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&q=80"
+                            alt="Early bird offer at Lemon Leaf Resort" loading="lazy" />
+                    </div>
+                    <div class="of-card-body">
+                        <h3>Early Bird Booking</h3>
+                        <div class="of-card-discount">
+                            <strong>10% OFF</strong>
+                            <span>booked 15+ days in advance</span>
+                        </div>
+                        <!-- PLACEHOLDER -->
+                        <p>Plan ahead and save — reserve your stay at least two weeks before check-in for a
+                            straightforward discount.</p>
+                        <div class="of-card-footer">
+                            <a href="https://wa.me/919876543210" target="_blank" rel="noopener"
+                                class="btn-sm">Enquire</a>
+                            <a href="index.html#book" class="btn-sm-outline">Check Dates</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLACEHOLDER OFFER 3 -->
+                <div class="of-card reveal-up delay-2">
+                    <div class="of-card-img">
+                        <span class="of-card-tag">Honeymoon</span>
+                        <span class="of-card-validity"><i class="fa-solid fa-clock"></i> PLACEHOLDER</span>
+                        <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=600&q=80"
+                            alt="Honeymoon offer at Lemon Leaf Resort" loading="lazy" />
+                    </div>
+                    <div class="of-card-body">
+                        <h3>Honeymoon Package</h3>
+                        <div class="of-card-discount">
+                            <strong>FREE</strong>
+                            <span>bonfire BBQ for newlyweds</span>
+                        </div>
+                        <!-- PLACEHOLDER -->
+                        <p>Booking your honeymoon at Lemon Leaf? Mention it while booking and we'll add a
+                            complimentary BBQ to your stay.</p>
+                        <div class="of-card-footer">
+                            <a href="https://wa.me/919876543210" target="_blank" rel="noopener"
+                                class="btn-sm">Enquire</a>
+                            <a href="index.html#book" class="btn-sm-outline">Check Dates</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMO CODES -->
+    <section class="of-promo-section" id="promo-codes">
+        <div class="container">
+            <div class="section-header section-header--light reveal-up">
+                <span class="eyebrow eyebrow--light">Quick Codes</span>
+                <h2>Apply These<br /><em>While Booking</em></h2>
+                <!-- PLACEHOLDER -->
+                <p>Mention these codes on WhatsApp or while booking to apply the matching discount.</p>
+            </div>
+            <div class="of-promo-grid">
+                <!-- PLACEHOLDER CODES -->
+                <div class="of-promo-card reveal-up">
+                    <div class="of-promo-code"><i class="fa-solid fa-ticket"></i> LEMON20</div>
+                    <h4>Midweek Escape</h4>
+                    <p>20% off on Monday – Thursday stays, any stay type.</p>
+                </div>
+                <div class="of-promo-card reveal-up delay-1">
+                    <div class="of-promo-code"><i class="fa-solid fa-ticket"></i> GROUP15</div>
+                    <h4>Group Getaway</h4>
+                    <p>15% off for groups of 6 or more travelling together.</p>
+                </div>
+                <div class="of-promo-card reveal-up delay-2">
+                    <div class="of-promo-code"><i class="fa-solid fa-ticket"></i> EARLY10</div>
+                    <h4>Early Bird Booking</h4>
+                    <p>10% off when booked 15 or more days in advance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TERMS / GOOD TO KNOW -->
+    <section class="of-terms-section" id="offer-terms">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="eyebrow">Fine Print</span>
+                <h2>Good to Know<br /><em>Before You Book</em></h2>
+            </div>
+            <div class="of-terms-list">
+                <!-- PLACEHOLDER TERMS -->
+                <div class="of-terms-item reveal-up">
+                    <span class="of-terms-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    <p>Offers cannot be combined with each other unless explicitly stated. Only one discount applies
+                        per booking.</p>
+                </div>
+                <div class="of-terms-item reveal-up delay-1">
+                    <span class="of-terms-icon"><i class="fa-solid fa-calendar-xmark"></i></span>
+                    <p>All offers are subject to availability and may be withdrawn or revised during peak season and
+                        public holidays.</p>
+                </div>
+                <div class="of-terms-item reveal-up delay-2">
+                    <span class="of-terms-icon"><i class="fa-solid fa-comments"></i></span>
+                    <p>To apply a discount or promo code, please mention it at the time of booking via WhatsApp or
+                        phone — it cannot be applied retroactively after check-in.</p>
+                </div>
+                <div class="of-terms-item reveal-up delay-3">
+                    <span class="of-terms-icon"><i class="fa-solid fa-receipt"></i></span>
+                    <p>Standard cancellation policy applies to discounted bookings. See our FAQ on the homepage for
+                        full cancellation terms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER (reused pattern from homepage/about/signature-escapes/dining/experiences) -->
+    <section class="cta-banner">
+        <div class="cta-banner-bg"></div>
+        <div class="cta-banner-inner">
+            <div class="cta-content reveal-up">
+                <span class="eyebrow eyebrow--light"><i class="fa-solid fa-location-dot"></i> Bhor, Pune · Just 55
+                    km Away</span>
+                <h2>Don't Miss<br /><em>Today's Best Rate</em></h2>
+                <p>Offers change with the season. Lock in your stay now before this one's gone.</p>
+                <div class="cta-actions">
+                    <a href="index.html#book" class="btn-primary">Check Availability</a>
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-whatsapp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+                        </svg>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-fab" target="_blank" rel="noopener"
+        aria-label="Chat on WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+            <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+        </svg>
+    </a>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiences — Lemon Leaf Resort Bhor | Bonfire, Pool &amp; Open Sky Theatre</title>
+    <meta name="description"
+        content="Experiences at Lemon Leaf Resort, Bhor — infinity pool, rain dance, bonfire nights, open sky theatre, cricket screenings, board games &amp; a coming-soon Kids Zone near Pune." />
+    <meta name="keywords"
+        content="lemon leaf resort experiences, things to do bhor resort, infinity pool activities pune, bonfire resort near pune, open sky theatre glamping" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+        .ex-hero {
+            position: relative;
+            height: 45vh;
+            height: 45svh;
+            min-height: 380px;
+            max-height: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .ex-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ex-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)),
+                linear-gradient(to bottom, rgba(53, 64, 36, 0.55), rgba(76, 61, 25, 0.65), rgba(53, 64, 36, 0.88));
+        }
+
+        .ex-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 1.5rem;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .ex-hero-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            line-height: 1.18;
+            color: var(--bone);
+            margin: 0 auto 1.2rem;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .ex-hero-title em {
+            color: var(--tan);
+            font-style: italic;
+        }
+
+        .ex-hero-sub {
+            color: rgba(255, 255, 255, 0.92);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .ex-hero-scroll {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ex-hero-scroll span {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(229, 215, 196, 0.6);
+        }
+
+        /* ── QUICK JUMP NAV (mirrors .se-jump-section from signature-escapes.html) ── */
+        .ex-jump-section {
+            background: var(--bone-lt);
+            border-bottom: 1px solid rgba(207, 187, 153, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .ex-jump-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            padding: 1rem 2rem;
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .ex-jump-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--cafe);
+            background: var(--white);
+            border: 1px solid rgba(207, 187, 153, 0.45);
+            border-radius: 999px;
+            padding: 0.55rem 1.15rem;
+            transition: var(--trans);
+        }
+
+        .ex-jump-pill i {
+            color: var(--moss);
+            font-size: 0.85rem;
+        }
+
+        .ex-jump-pill:hover {
+            background: var(--kombu);
+            border-color: var(--kombu);
+            color: var(--bone);
+        }
+
+        .ex-jump-pill:hover i {
+            color: var(--tan);
+        }
+
+        /* ── FEATURED EXPERIENCE BLOCKS (mirrors .se-escape alternating pattern) ── */
+        .ex-feature {
+            padding: 6rem 0;
+        }
+
+        .ex-feature:nth-child(odd) {
+            background: var(--bone-lt);
+        }
+
+        .ex-feature:nth-child(even) {
+            background: var(--bone);
+        }
+
+        .ex-feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.5rem;
+            align-items: center;
+        }
+
+        .ex-feature.reverse .ex-feature-grid {
+            direction: rtl;
+        }
+
+        .ex-feature.reverse .ex-feature-grid>* {
+            direction: ltr;
+        }
+
+        .ex-feature-img-wrap {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow);
+        }
+
+        .ex-feature-tag {
+            position: absolute;
+            top: 1.2rem;
+            left: 1.2rem;
+            background: var(--tan);
+            color: var(--cafe);
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.45rem 1rem;
+            border-radius: 3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            z-index: 2;
+        }
+
+        .ex-feature-content .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ex-feature-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .ex-feature-content h2 em {
+            color: var(--moss);
+        }
+
+        .ex-feature-content>p {
+            margin-bottom: 1.2rem;
+        }
+
+        .ex-feature-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.6rem;
+        }
+
+        .ex-meta-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            color: var(--cafe);
+            background: var(--white);
+            border: 1px solid rgba(207, 187, 153, 0.4);
+            border-radius: 999px;
+            padding: 0.5rem 1rem;
+        }
+
+        .ex-meta-pill i {
+            color: var(--moss);
+            font-size: 0.78rem;
+        }
+
+        /* ── ALL EXPERIENCES GRID (reuses .exp-card pattern from index.html, dark band) ── */
+        .ex-grid-section {
+            padding: 6rem 0;
+            background: var(--kombu);
+        }
+
+        .ex-grid-section .section-header h2 {
+            color: var(--bone);
+        }
+
+        /* ── KIDS ZONE (reuses .kids-zone pattern from index.html) ── */
+        .ex-kids-section {
+            padding: 6rem 0;
+            background: var(--bone-lt);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .ex-feature-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .ex-feature.reverse .ex-feature-grid {
+                direction: ltr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ex-hero {
+                height: 60svh;
+                min-height: 420px;
+            }
+
+            .ex-feature,
+            .ex-grid-section,
+            .ex-kids-section {
+                padding: 4rem 0;
+            }
+
+            .ex-jump-bar {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .ex-jump-pill {
+                flex-shrink: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ex-hero {
+                min-height: 380px;
+            }
+
+            .ex-hero-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="/images/logo/lemon-leaf-logo.png" alt="Lemon Leaf Resort"
+                    onerror="this.style.display='none'" />
+            </div>
+            <div class="preloader-name">Lemon Leaf Resort</div>
+            <div class="preloader-tagline">Experiences</div>
+            <div class="preloader-bar">
+                <div class="preloader-fill" id="preloaderFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar"></div>
+
+    <!-- EXPERIENCES HERO -->
+    <section class="ex-hero" id="experiences-hero">
+        <div class="ex-hero-bg" style="background-image:url('/images/hero-banner/event.jpg')"></div>
+        <div class="ex-hero-overlay"></div>
+        <div class="ex-hero-content">
+            <div class="hero-eyebrow reveal-up">Experiences at Lemon Leaf</div>
+            <h1 class="ex-hero-title reveal-up delay-1">Every Day Is<em> a New Adventure</em></h1>
+            <p class="ex-hero-sub reveal-up delay-2">From sunrise swims in the infinity pool to bonfire nights
+                under an open sky — every moment at Lemon Leaf is built around doing nothing the usual way.</p>
+        </div>
+        <div class="ex-hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- QUICK JUMP NAV -->
+    <section class="ex-jump-section">
+        <div class="ex-jump-bar">
+            <a href="#infinity-pool" class="ex-jump-pill"><i class="fa-solid fa-person-swimming"></i> Infinity
+                Pool</a>
+            <a href="#bonfire-nights" class="ex-jump-pill"><i class="fa-solid fa-fire"></i> Bonfire Nights</a>
+            <a href="#open-sky-theatre" class="ex-jump-pill"><i class="fa-solid fa-film"></i> Open Sky Theatre</a>
+            <a href="#all-experiences" class="ex-jump-pill"><i class="fa-solid fa-list"></i> All Experiences</a>
+            <a href="#kids-zone" class="ex-jump-pill"><i class="fa-solid fa-child-reaching"></i> Kids Zone</a>
+        </div>
+    </section>
+
+    <!-- FEATURED: INFINITY POOL -->
+    <section class="ex-feature" id="infinity-pool">
+        <div class="container ex-feature-grid">
+            <div class="ex-feature-img-wrap reveal-left">
+                <span class="ex-feature-tag"><i class="fa-solid fa-person-swimming"></i> Signature Experience</span>
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=80"
+                    alt="Infinity pool with lake view at Lemon Leaf Resort" loading="lazy" />
+            </div>
+            <div class="ex-feature-content reveal-right">
+                <span class="eyebrow"><i class="fa-solid fa-person-swimming"></i> Experience 01</span>
+                <h2>The Infinity Pool<br /><em>Where the Water Meets the Lake</em></h2>
+                <p>This is the view people screenshot before they've even checked in. Our infinity pool sits right
+                    at the edge of the lake, blending seamlessly into the horizon — the kind of swim that turns into
+                    an hour of just floating and staring at the hills.</p>
+                <div class="ex-feature-meta">
+                    <span class="ex-meta-pill"><i class="fa-solid fa-sun"></i> Best at sunrise &amp; sunset</span>
+                    <span class="ex-meta-pill"><i class="fa-solid fa-water"></i> Lake-facing infinity edge</span>
+                    <span class="ex-meta-pill"><i class="fa-solid fa-users"></i> Open to all guests</span>
+                </div>
+                <a href="index.html#book" class="btn-primary">Book Your Stay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED: BONFIRE NIGHTS -->
+    <section class="ex-feature reverse" id="bonfire-nights">
+        <div class="container ex-feature-grid">
+            <div class="ex-feature-content reveal-left">
+                <span class="eyebrow"><i class="fa-solid fa-fire"></i> Experience 02</span>
+                <h2>Bonfire Nights<br /><em>The Heart of Every Evening</em></h2>
+                <p>There's a fire lit every single night at Lemon Leaf, and somehow every conversation eventually
+                    ends up around it. Stories, songs, chai passed hand to hand — it's less a scheduled activity and
+                    more the place everyone naturally gathers once the sun's gone.</p>
+                <div class="ex-feature-meta">
+                    <span class="ex-meta-pill"><i class="fa-solid fa-calendar-check"></i> Every night, all
+                        year</span>
+                    <span class="ex-meta-pill"><i class="fa-solid fa-mug-hot"></i> Pairs well with Hi-Tea</span>
+                    <span class="ex-meta-pill"><i class="fa-solid fa-users"></i> Great for groups &amp; couples</span>
+                </div>
+                <a href="index.html#book" class="btn-primary">Book Your Stay</a>
+            </div>
+            <div class="ex-feature-img-wrap reveal-right">
+                <span class="ex-feature-tag"><i class="fa-solid fa-fire"></i> Every Night</span>
+                <img src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?w=900&q=80"
+                    alt="Bonfire evening at Lemon Leaf Resort" loading="lazy" />
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED: OPEN SKY THEATRE -->
+    <section class="ex-feature" id="open-sky-theatre">
+        <div class="container ex-feature-grid">
+            <div class="ex-feature-img-wrap reveal-left">
+                <span class="ex-feature-tag"><i class="fa-solid fa-film"></i> After Dark</span>
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=900&q=80"
+                    alt="Open sky theatre night screening at Lemon Leaf Resort" loading="lazy" />
+            </div>
+            <div class="ex-feature-content reveal-right">
+                <span class="eyebrow"><i class="fa-solid fa-film"></i> Experience 03</span>
+                <h2>Open Sky Theatre<br /><em>Cinema Without a Ceiling</em></h2>
+                <p>We swapped the multiplex roof for an actual sky. Settle in for a film under the stars, the
+                    night air doing what air conditioning never could — it's the kind of detail that turns a regular
+                    movie night into the thing guests talk about long after checkout.</p>
+                <div class="ex-feature-meta">
+                    <span class="ex-meta-pill"><i class="fa-solid fa-moon"></i> Evening screenings</span>
+                    <span class="ex-meta-pill"><i class="fa-solid fa-star"></i> Weather dependent</span>
+                    <span class="ex-meta-pill"><i class="fa-solid fa-users"></i> Open to all guests</span>
+                </div>
+                <a href="index.html#book" class="btn-primary">Book Your Stay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALL EXPERIENCES GRID -->
+    <section class="ex-grid-section" id="all-experiences">
+        <div class="container">
+            <div class="section-header section-header--light reveal-up">
+                <span class="eyebrow eyebrow--light">Everything Else You Can Do</span>
+                <h2>The Full List<br /><em>of What's On</em></h2>
+                <p>Beyond the headline experiences above, here's everything else woven into your stay at Lemon
+                    Leaf.</p>
+            </div>
+            <div class="exp-grid">
+                <div class="exp-card reveal-up">
+                    <div class="exp-icon"><i class="fa-solid fa-person-swimming"></i></div>
+                    <h4>Infinity Pool</h4>
+                    <p>Swim in our stunning infinity pool that blends seamlessly with the lake horizon — a view
+                        you'll never forget.</p>
+                </div>
+                <div class="exp-card reveal-up delay-1">
+                    <div class="exp-icon"><i class="fa-solid fa-music"></i></div>
+                    <h4>Rain Dance</h4>
+                    <p>High-energy rain dance sessions — perfect for groups, families, and pure unfiltered fun.</p>
+                </div>
+                <div class="exp-card reveal-up delay-2">
+                    <div class="exp-icon"><i class="fa-solid fa-fire"></i></div>
+                    <h4>Bonfire Nights</h4>
+                    <p>Gather around a crackling bonfire every evening for stories, chai, and starlit
+                        conversations.</p>
+                </div>
+                <div class="exp-card reveal-up delay-3">
+                    <div class="exp-icon"><i class="fa-solid fa-film"></i></div>
+                    <h4>Open Sky Theatre</h4>
+                    <p>Watch films under a canopy of stars at our open-air theatre. Cinema has never felt this
+                        free.</p>
+                </div>
+                <div class="exp-card reveal-up">
+                    <div class="exp-icon"><i class="fa-solid fa-tv"></i></div>
+                    <h4>Live Cricket Screening</h4>
+                    <p>Never miss a match — enjoy live cricket with your squad at the resort's big screen setup.</p>
+                </div>
+                <div class="exp-card reveal-up delay-1">
+                    <div class="exp-icon"><i class="fa-solid fa-dice"></i></div>
+                    <h4>Board Games</h4>
+                    <p>Unplug and play — Snake &amp; Ladder, Chessboard, UNO, Card Games and more.</p>
+                </div>
+                <div class="exp-card reveal-up delay-2">
+                    <div class="exp-icon"><i class="fa-solid fa-futbol"></i></div>
+                    <h4>Fooseball <span class="coming-soon">Coming Soon</span></h4>
+                    <p>Table football for the competitive souls — arriving very soon at Lemon Leaf!</p>
+                </div>
+                <div class="exp-card reveal-up delay-3">
+                    <div class="exp-icon"><i class="fa-solid fa-water"></i></div>
+                    <h4>Dunk Tank <span class="coming-soon">Coming Soon</span></h4>
+                    <p>The ultimate fun challenge — perfect for groups who love to dare each other.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KIDS ZONE -->
+    <section class="ex-kids-section" id="kids-zone">
+        <div class="container">
+            <div class="kids-zone reveal-up">
+                <div class="kids-header">
+                    <div class="kids-icon"><i class="fa-solid fa-child-reaching"></i></div>
+                    <div>
+                        <h4>Kids Zone — <span class="coming-soon-lg">Coming Very Soon!</span></h4>
+                        <p>We're building a dedicated children's paradise at Lemon Leaf Resort.</p>
+                    </div>
+                </div>
+                <div class="kids-grid">
+                    <div class="kid-item"><i class="fa-solid fa-water"></i> Wave Slide</div>
+                    <div class="kid-item"><i class="fa-solid fa-puzzle-piece"></i> X and O</div>
+                    <div class="kid-item"><i class="fa-solid fa-horse"></i> Merry Go Round</div>
+                    <div class="kid-item"><i class="fa-solid fa-children"></i> Swing Set</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER (reused pattern from homepage/about/signature-escapes/dining) -->
+    <section class="cta-banner">
+        <div class="cta-banner-bg"></div>
+        <div class="cta-banner-inner">
+            <div class="cta-content reveal-up">
+                <span class="eyebrow eyebrow--light"><i class="fa-solid fa-location-dot"></i> Bhor, Pune · Just 55
+                    km Away</span>
+                <h2>Ready for<br /><em>a Different Kind of Weekend?</em></h2>
+                <p>Every experience above is included in your stay. Book now and come find out what doing nothing
+                    actually feels like.</p>
+                <div class="cta-actions">
+                    <a href="index.html#book" class="btn-primary">Book a Stay</a>
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-whatsapp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+                        </svg>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-fab" target="_blank" rel="noopener"
+        aria-label="Chat on WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+            <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+        </svg>
+    </a>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

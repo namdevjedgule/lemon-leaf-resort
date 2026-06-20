@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dining — Lemon Leaf Resort Bhor | Buffet, Bonfire BBQ &amp; Hi-Tea</title>
+    <meta name="description"
+        content="Dining at Lemon Leaf Resort, Bhor — buffet breakfast &amp; dinner, evening hi-tea, and bonfire BBQ on request. Veg &amp; Non-Veg, served under the open sky near Pune." />
+    <meta name="keywords"
+        content="lemon leaf resort dining, buffet bhor resort, bonfire bbq pune resort, veg non veg buffet glamping" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+        .dn-hero {
+            position: relative;
+            height: 45vh;
+            height: 45svh;
+            min-height: 380px;
+            max-height: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .dn-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .dn-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)),
+                linear-gradient(to bottom, rgba(53, 64, 36, 0.55), rgba(76, 61, 25, 0.65), rgba(53, 64, 36, 0.88));
+        }
+
+        .dn-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 1.5rem;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .dn-hero-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            line-height: 1.18;
+            color: var(--bone);
+            margin: 0 auto 1.2rem;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .dn-hero-title em {
+            color: var(--tan);
+            font-style: italic;
+        }
+
+        .dn-hero-sub {
+            color: rgba(255, 255, 255, 0.92);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .dn-hero-scroll {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dn-hero-scroll span {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(229, 215, 196, 0.6);
+        }
+
+        /* ── PHILOSOPHY STRIP (mirrors .story-section / .about-strip two-column pattern) ── */
+        .dn-philosophy {
+            padding: 6rem 0;
+            background: var(--bone-lt);
+        }
+
+        .dn-phil-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .dn-phil-img-wrap {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: var(--shadow);
+        }
+
+        .dn-phil-badge {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            background: var(--tan);
+            color: var(--cafe);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.5rem 1.1rem;
+            border-radius: 3px;
+        }
+
+        .dn-phil-content h2 {
+            margin-bottom: 1.2rem;
+        }
+
+        .dn-phil-content h2 em {
+            color: var(--moss);
+        }
+
+        .dn-phil-content p {
+            margin-bottom: 1.1rem;
+        }
+
+        .dn-phil-features {
+            margin: 1.8rem 0 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .dn-phil-features li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            border: 1px solid rgba(207, 187, 153, 0.25);
+            border-radius: var(--radius);
+            transition: var(--trans);
+        }
+
+        .dn-phil-features li:hover {
+            transform: translateX(6px);
+            border-color: var(--tan);
+            box-shadow: var(--shadow);
+        }
+
+        .dn-phil-icon {
+            width: 3rem;
+            height: 3rem;
+            min-width: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(136, 144, 99, 0.12);
+            font-size: 1rem;
+            transition: var(--trans);
+            color: var(--moss);
+        }
+
+        .dn-phil-features li:hover .dn-phil-icon {
+            background: var(--moss);
+            color: var(--white);
+        }
+
+        /* ── MEAL JOURNEY (timeline-style, mirrors .journey-track from about.html — order is genuinely chronological here) ── */
+        .dn-meals-section {
+            padding: 6rem 0;
+            background: var(--bone);
+        }
+
+        .dn-meals-section .section-header h2 em {
+            color: var(--moss);
+        }
+
+        .dn-meals-track {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 2.2rem;
+        }
+
+        .dn-meals-track::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            bottom: 6px;
+            left: 6px;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--tan), rgba(207, 187, 153, 0.25));
+        }
+
+        .dn-meal-item {
+            position: relative;
+            padding-bottom: 2.8rem;
+            display: flex;
+            gap: 1.6rem;
+            align-items: flex-start;
+        }
+
+        .dn-meal-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .dn-meal-dot {
+            position: absolute;
+            left: -2.2rem;
+            top: 6px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--tan);
+            border: 3px solid var(--bone);
+            box-shadow: 0 0 0 1px rgba(207, 187, 153, 0.5);
+        }
+
+        .dn-meal-time {
+            display: inline-block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--moss);
+            margin-bottom: 0.3rem;
+        }
+
+        .dn-meal-body {
+            flex: 1;
+            background: var(--white);
+            border: 1px solid rgba(207, 187, 153, 0.35);
+            border-radius: var(--radius);
+            padding: 1.4rem 1.6rem;
+            box-shadow: var(--shadow);
+        }
+
+        .dn-meal-head {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dn-meal-icon {
+            width: 2.6rem;
+            height: 2.6rem;
+            min-width: 2.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(136, 144, 99, 0.12);
+            color: var(--moss);
+            font-size: 1rem;
+        }
+
+        .dn-meal-body h4 {
+            font-size: 1.15rem;
+            color: var(--cafe);
+        }
+
+        .dn-meal-body p {
+            font-size: 0.86rem;
+            line-height: 1.7;
+        }
+
+        .dn-meal-tag {
+            display: inline-block;
+            font-size: 0.62rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: rgba(136, 144, 99, 0.12);
+            color: var(--moss);
+            padding: 0.22rem 0.6rem;
+            border-radius: 10px;
+            margin-top: 0.7rem;
+            margin-right: 0.4rem;
+        }
+
+        /* ── CUISINE SHOWCASE (mirrors .pkg-grid / .exp-grid card pattern, dark band) ── */
+        .dn-cuisine-section {
+            padding: 6rem 0;
+            background: var(--kombu);
+        }
+
+        .dn-cuisine-section .section-header h2 {
+            color: var(--bone);
+        }
+
+        .dn-cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+        }
+
+        .dn-cuisine-card {
+            background: rgba(229, 215, 196, 0.07);
+            border: 1px solid rgba(207, 187, 153, 0.18);
+            border-radius: var(--radius);
+            padding: 1.8rem 1.4rem;
+            text-align: center;
+            transition: transform var(--trans), background var(--trans), border-color var(--trans);
+        }
+
+        .dn-cuisine-card:hover {
+            background: rgba(229, 215, 196, 0.12);
+            border-color: rgba(207, 187, 153, 0.35);
+            transform: translateY(-6px);
+        }
+
+        .dn-cuisine-icon {
+            width: 4rem;
+            height: 4rem;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(136, 144, 99, 0.15);
+            border: 1px solid rgba(207, 187, 153, 0.2);
+            color: var(--tan);
+            font-size: 1.25rem;
+            transition: var(--trans);
+        }
+
+        .dn-cuisine-card:hover .dn-cuisine-icon {
+            background: var(--moss);
+            border-color: var(--moss);
+            color: var(--white);
+            transform: scale(1.08);
+        }
+
+        .dn-cuisine-card h4 {
+            color: var(--bone);
+            font-size: 1.02rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dn-cuisine-card p {
+            color: rgba(207, 187, 153, 0.82);
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+
+        /* ── BBQ FEATURE (mirrors .bbq-addon from index.html, expanded) ── */
+        .dn-bbq-section {
+            padding: 6rem 0;
+            background: var(--bone-lt);
+        }
+
+        .dn-bbq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.5rem;
+            align-items: center;
+        }
+
+        .dn-bbq-img-wrap {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow);
+        }
+
+        .dn-bbq-tag {
+            position: absolute;
+            top: 1.2rem;
+            left: 1.2rem;
+            background: var(--tan);
+            color: var(--cafe);
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.45rem 1rem;
+            border-radius: 3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            z-index: 2;
+        }
+
+        .dn-bbq-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .dn-bbq-content h2 em {
+            color: var(--moss);
+        }
+
+        .dn-bbq-content>p {
+            margin-bottom: 1.4rem;
+        }
+
+        .dn-bbq-pricing-card {
+            background: var(--white);
+            border: 1px solid rgba(207, 187, 153, 0.4);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.4rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.6rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .dn-bbq-price-row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dn-bbq-price-label {
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--moss);
+            margin-bottom: 0.2rem;
+        }
+
+        .dn-bbq-price-val {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--cafe);
+        }
+
+        .dn-bbq-price-val small {
+            font-size: 0.7rem;
+            color: var(--moss);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .dn-bbq-price-divider {
+            width: 1px;
+            height: 36px;
+            background: rgba(207, 187, 153, 0.5);
+        }
+
+        .dn-bbq-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            font-size: 0.82rem;
+            color: var(--moss);
+            line-height: 1.6;
+        }
+
+        .dn-bbq-note i {
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* ── DIETARY / GOOD TO KNOW (mirrors .amen-grid card pattern) ── */
+        .dn-info-section {
+            padding: 5rem 0;
+            background: var(--bone);
+        }
+
+        .dn-info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+        }
+
+        .dn-info-card {
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.25rem;
+            border: 1px solid rgba(207, 187, 153, 0.3);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform var(--trans), border-color var(--trans);
+        }
+
+        .dn-info-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--tan);
+        }
+
+        .dn-info-card span {
+            width: 3rem;
+            height: 3rem;
+            min-width: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            background: rgba(136, 144, 99, 0.12);
+            color: var(--moss);
+            font-size: 1.25rem;
+        }
+
+        .dn-info-card:hover span {
+            background: var(--moss);
+            color: var(--white);
+        }
+
+        .dn-info-card p {
+            margin: 0;
+            color: var(--cafe);
+            font-size: 0.88rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+
+            .dn-phil-grid,
+            .dn-bbq-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .dn-phil-img-wrap,
+            .dn-bbq-img-wrap {
+                aspect-ratio: 16/9;
+                max-height: 380px;
+            }
+
+            .dn-cuisine-grid,
+            .dn-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dn-hero {
+                height: 60svh;
+                min-height: 420px;
+            }
+
+            .dn-philosophy,
+            .dn-meals-section,
+            .dn-cuisine-section,
+            .dn-bbq-section,
+            .dn-info-section {
+                padding: 4rem 0;
+            }
+
+            .dn-meal-item {
+                gap: 1rem;
+            }
+
+            .dn-meal-body {
+                padding: 1.1rem 1.2rem;
+            }
+
+            .dn-meals-track {
+                padding-left: 1.8rem;
+            }
+
+            .dn-meal-dot {
+                left: -1.8rem;
+            }
+
+            .dn-bbq-pricing-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .dn-bbq-price-divider {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dn-hero {
+                min-height: 380px;
+            }
+
+            .dn-hero-title {
+                font-size: 2rem;
+            }
+
+            .dn-cuisine-grid,
+            .dn-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dn-meal-head {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="/images/logo/lemon-leaf-logo.png" alt="Lemon Leaf Resort"
+                    onerror="this.style.display='none'" />
+            </div>
+            <div class="preloader-name">Lemon Leaf Resort</div>
+            <div class="preloader-tagline">Dining</div>
+            <div class="preloader-bar">
+                <div class="preloader-fill" id="preloaderFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar"></div>
+
+    <!-- DINING HERO -->
+    <section class="dn-hero" id="dining-hero">
+        <div class="dn-hero-bg" style="background-image:url('/images/hero-banner/event.jpg')"></div>
+        <div class="dn-hero-overlay"></div>
+        <div class="dn-hero-content">
+            <div class="hero-eyebrow reveal-up">Dining at Lemon Leaf</div>
+            <h1 class="dn-hero-title reveal-up delay-1">Food Tastes Different<em> Under an Open Sky</em></h1>
+            <p class="dn-hero-sub reveal-up delay-2">
+                Buffet breakfast and dinner, evening hi-tea, and a bonfire BBQ on request — every meal at Lemon
+                Leaf is served the way it should be: outdoors, unhurried, and shared.</p>
+        </div>
+        <div class="dn-hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- DINING PHILOSOPHY -->
+    <section class="dn-philosophy" id="dining-philosophy">
+        <div class="container dn-phil-grid">
+            <div class="dn-phil-img-wrap reveal-left">
+                <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564?w=800&q=80"
+                    alt="Outdoor buffet dining setup at Lemon Leaf Resort" loading="lazy" />
+                <div class="dn-phil-badge">Farm-Inspired</div>
+            </div>
+            <div class="dn-phil-content reveal-right">
+                <span class="eyebrow">Our Dining Philosophy</span>
+                <h2>Simple Food,<br /><em>Served Honestly</em></h2>
+                <!-- PLACEHOLDER: replace with client's actual sourcing/cooking philosophy -->
+                <p>We don't believe a resort meal needs to be complicated to be memorable. At Lemon Leaf, dinner
+                    means a full buffet spread of vegetarian and non-vegetarian dishes, served warm, eaten outdoors,
+                    usually with a bonfire crackling somewhere nearby.</p>
+                <p>From your welcome drink at check-in to the last cup of chai by the fire, food here is less about
+                    plating and more about the company you're sharing the table with.</p>
+                <ul class="dn-phil-features">
+                    <li><span class="dn-phil-icon"><i class="fa-solid fa-utensils"></i></span> Buffet Breakfast
+                        &amp; Dinner, Veg + Non-Veg</li>
+                    <li><span class="dn-phil-icon"><i class="fa-solid fa-mug-hot"></i></span> Evening Hi-Tea &amp;
+                        Snacks included</li>
+                    <li><span class="dn-phil-icon"><i class="fa-solid fa-fire"></i></span> Bonfire BBQ available on
+                        request</li>
+                    <li><span class="dn-phil-icon"><i class="fa-solid fa-glass-water"></i></span> Welcome drink on
+                        arrival, every stay</li>
+                </ul>
+                <div class="about-ctas">
+                    <a href="index.html#book" class="btn-primary">Book Your Stay</a>
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-whatsapp-sm">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+                        </svg>
+                        Ask About the Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEAL JOURNEY (timeline through the day) -->
+    <section class="dn-meals-section" id="dining-meals">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="eyebrow">A Day of Eating Well</span>
+                <h2>From Welcome Drink<br /><em>to the Last Bonfire Chai</em></h2>
+                <p>Here's what's included in every stay, in the order you'll actually experience it.</p>
+            </div>
+            <div class="dn-meals-track">
+
+                <div class="dn-meal-item reveal-up">
+                    <div class="dn-meal-dot"></div>
+                    <div class="dn-meal-body">
+                        <div class="dn-meal-head">
+                            <span class="dn-meal-icon"><i class="fa-solid fa-glass-water"></i></span>
+                            <div>
+                                <span class="dn-meal-time">On Arrival</span>
+                                <h4>Welcome Drink</h4>
+                            </div>
+                        </div>
+                        <!-- PLACEHOLDER: replace with actual welcome drink details -->
+                        <p>A refreshing drink to greet you the moment you check in — the first sign you've actually
+                            left the city behind.</p>
+                        <span class="dn-meal-tag">Included in every stay</span>
+                    </div>
+                </div>
+
+                <div class="dn-meal-item reveal-up delay-1">
+                    <div class="dn-meal-dot"></div>
+                    <div class="dn-meal-body">
+                        <div class="dn-meal-head">
+                            <span class="dn-meal-icon"><i class="fa-solid fa-mug-hot"></i></span>
+                            <div>
+                                <span class="dn-meal-time">Evening · ~5:00 PM</span>
+                                <h4>Hi-Tea &amp; Snacks</h4>
+                            </div>
+                        </div>
+                        <!-- PLACEHOLDER: replace with actual hi-tea menu -->
+                        <p>Chai, coffee, and a plate of snacks served as the sun starts dipping behind the hills —
+                            the unofficial start of every Lemon Leaf evening.</p>
+                        <span class="dn-meal-tag">Included in every stay</span>
+                    </div>
+                </div>
+
+                <div class="dn-meal-item reveal-up delay-2">
+                    <div class="dn-meal-dot"></div>
+                    <div class="dn-meal-body">
+                        <div class="dn-meal-head">
+                            <span class="dn-meal-icon"><i class="fa-solid fa-fire"></i></span>
+                            <div>
+                                <span class="dn-meal-time">Night · ~8:00 PM</span>
+                                <h4>Buffet Dinner</h4>
+                            </div>
+                        </div>
+                        <!-- PLACEHOLDER: replace with actual dinner menu / cuisine details -->
+                        <p>A full buffet spread with vegetarian and non-vegetarian dishes, served warm and often
+                            enjoyed with the bonfire crackling a few steps away.</p>
+                        <span class="dn-meal-tag">Veg + Non-Veg</span>
+                        <span class="dn-meal-tag">Included in every stay</span>
+                    </div>
+                </div>
+
+                <div class="dn-meal-item reveal-up delay-3">
+                    <div class="dn-meal-dot"></div>
+                    <div class="dn-meal-body">
+                        <div class="dn-meal-head">
+                            <span class="dn-meal-icon"><i class="fa-solid fa-drumstick-bite"></i></span>
+                            <div>
+                                <span class="dn-meal-time">Optional Add-on</span>
+                                <h4>Bonfire BBQ</h4>
+                            </div>
+                        </div>
+                        <p>For guests who want to take the evening further — a sizzling BBQ experience by the fire,
+                            available on request.</p>
+                        <span class="dn-meal-tag">₹900 / kg Non-Veg</span>
+                        <span class="dn-meal-tag">₹600 / kg Veg</span>
+                    </div>
+                </div>
+
+                <div class="dn-meal-item reveal-up">
+                    <div class="dn-meal-dot"></div>
+                    <div class="dn-meal-body">
+                        <div class="dn-meal-head">
+                            <span class="dn-meal-icon"><i class="fa-solid fa-sun"></i></span>
+                            <div>
+                                <span class="dn-meal-time">Morning</span>
+                                <h4>Breakfast Buffet</h4>
+                            </div>
+                        </div>
+                        <!-- PLACEHOLDER: replace with actual breakfast menu -->
+                        <p>A fresh breakfast buffet to fuel the day ahead — whether that's a trek to Rajgad Fort or
+                            another lap of the infinity pool.</p>
+                        <span class="dn-meal-tag">Included in every stay</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CUISINE SHOWCASE -->
+    <section class="dn-cuisine-section" id="dining-cuisine">
+        <div class="container">
+            <div class="section-header section-header--light reveal-up">
+                <span class="eyebrow eyebrow--light">What's on the Table</span>
+                <h2>Built Around<br /><em>Choice, Not Compromise</em></h2>
+                <!-- PLACEHOLDER: replace with actual cuisine style description once confirmed -->
+                <p>Every buffet is planned with both vegetarian and non-vegetarian guests in mind — no one leaves
+                    the table without options.</p>
+            </div>
+            <div class="dn-cuisine-grid">
+                <div class="dn-cuisine-card reveal-up">
+                    <div class="dn-cuisine-icon"><i class="fa-solid fa-seedling"></i></div>
+                    <h4>Vegetarian Spread</h4>
+                    <!-- PLACEHOLDER -->
+                    <p>A full vegetarian buffet line at every meal — never an afterthought, always a complete
+                        spread.</p>
+                </div>
+                <div class="dn-cuisine-card reveal-up delay-1">
+                    <div class="dn-cuisine-icon"><i class="fa-solid fa-drumstick-bite"></i></div>
+                    <h4>Non-Vegetarian Spread</h4>
+                    <!-- PLACEHOLDER -->
+                    <p>Hearty non-veg options served alongside the vegetarian buffet at breakfast and dinner.</p>
+                </div>
+                <div class="dn-cuisine-card reveal-up delay-2">
+                    <div class="dn-cuisine-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                    <h4>Hi-Tea &amp; Beverages</h4>
+                    <!-- PLACEHOLDER -->
+                    <p>Chai, coffee, and snacks each evening — the small ritual that kicks off bonfire season.</p>
+                </div>
+                <div class="dn-cuisine-card reveal-up delay-3">
+                    <div class="dn-cuisine-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                    <h4>Bonfire BBQ</h4>
+                    <!-- PLACEHOLDER -->
+                    <p>An add-on experience for guests who want a sizzling, smoky finish to their evening.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BBQ FEATURE -->
+    <section class="dn-bbq-section" id="dining-bbq">
+        <div class="container dn-bbq-grid">
+            <div class="dn-bbq-img-wrap reveal-left">
+                <span class="dn-bbq-tag"><i class="fa-solid fa-fire"></i> Optional Add-on</span>
+                <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=800&q=80"
+                    alt="Bonfire BBQ setup at Lemon Leaf Resort" loading="lazy" />
+            </div>
+            <div class="dn-bbq-content reveal-right">
+                <span class="eyebrow"><i class="fa-solid fa-drumstick-bite"></i> Bonfire BBQ</span>
+                <h2>Take the Evening<br /><em>One Step Further</em></h2>
+                <!-- PLACEHOLDER: replace with actual BBQ menu/description once confirmed -->
+                <p>For guests who want more than the standard buffet, our bonfire BBQ is available on request —
+                    skewers and smoke, right by the fire, while the rest of the resort winds down around you.</p>
+                <div class="dn-bbq-pricing-card">
+                    <div class="dn-bbq-price-row">
+                        <span class="dn-bbq-price-label">Non-Veg</span>
+                        <span class="dn-bbq-price-val">₹900 <small>/ kg</small></span>
+                    </div>
+                    <div class="dn-bbq-price-divider"></div>
+                    <div class="dn-bbq-price-row">
+                        <span class="dn-bbq-price-label">Veg</span>
+                        <span class="dn-bbq-price-val">₹600 <small>/ kg</small></span>
+                    </div>
+                </div>
+                <div class="dn-bbq-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Available on request — please ask your host to arrange this at check-in or while
+                        booking.</span>
+                </div>
+                <div class="se-escape-ctas" style="margin-top: 1.4rem;">
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-primary">Request
+                        BBQ on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIETARY / GOOD TO KNOW -->
+    <section class="dn-info-section" id="dining-info">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="eyebrow">Good to Know</span>
+                <h2>Before You<br /><em>Sit Down to Eat</em></h2>
+            </div>
+            <div class="dn-info-grid">
+                <div class="dn-info-card reveal-up"><span><i class="fa-solid fa-utensils"></i></span>
+                    <!-- PLACEHOLDER -->
+                    <p>Buffet Breakfast &amp; Dinner Included</p>
+                </div>
+                <div class="dn-info-card reveal-up delay-1"><span><i class="fa-solid fa-leaf"></i></span>
+                    <!-- PLACEHOLDER -->
+                    <p>Veg &amp; Non-Veg Options Always Available</p>
+                </div>
+                <div class="dn-info-card reveal-up delay-2"><span><i class="fa-solid fa-bell-concierge"></i></span>
+                    <!-- PLACEHOLDER -->
+                    <p>BBQ &amp; Special Requests on Advance Notice</p>
+                </div>
+                <div class="dn-info-card reveal-up delay-3"><span><i class="fa-solid fa-clock"></i></span>
+                    <!-- PLACEHOLDER -->
+                    <p>Dinner ~8:00 PM · Breakfast Until Check-out</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER (reused pattern from homepage/about/signature-escapes) -->
+    <section class="cta-banner">
+        <div class="cta-banner-bg"></div>
+        <div class="cta-banner-inner">
+            <div class="cta-content reveal-up">
+                <span class="eyebrow eyebrow--light"><i class="fa-solid fa-location-dot"></i> Bhor, Pune · Just 55
+                    km Away</span>
+                <h2>Hungry for<br /><em>the Full Experience?</em></h2>
+                <p>Every stay includes the full dining experience above. Book your escape and come taste it for
+                    yourself.</p>
+                <div class="cta-actions">
+                    <a href="index.html#book" class="btn-primary">Book a Stay</a>
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-whatsapp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+                        </svg>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <a href="https://wa.me/919876543210" class="whatsapp-fab" target="_blank" rel="noopener"
+        aria-label="Chat on WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+            <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+        </svg>
+    </a>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

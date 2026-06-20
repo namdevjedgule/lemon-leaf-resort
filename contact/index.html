@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us — Lemon Leaf Resort Bhor | Our Story &amp; Founders</title>
+    <meta name="description"
+        content="Meet the founders of Lemon Leaf Resort, Bhor — Amol Patil, Harish Nair &amp; Prasoon Dangra. Discover the story behind Pune's premier luxury glamping escape." />
+    <meta name="keywords"
+        content="about lemon leaf resort, lemon leaf resort founders, luxury resort bhor owners, glamping resort pune story" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+        .cn-hero {
+            position: relative;
+            height: 45vh;
+            height: 45svh;
+            min-height: 380px;
+            max-height: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .cn-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cn-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)),
+                linear-gradient(to bottom, rgba(53, 64, 36, 0.55), rgba(76, 61, 25, 0.65), rgba(53, 64, 36, 0.88));
+        }
+
+        .cn-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 1.5rem;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .cn-hero-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            line-height: 1.18;
+            color: var(--bone);
+            margin: 0 auto 1.2rem;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .cn-hero-title em {
+            color: var(--tan);
+            font-style: italic;
+        }
+
+        .cn-hero-sub {
+            color: rgba(255, 255, 255, 0.92);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .cn-hero-scroll {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cn-hero-scroll span {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(229, 215, 196, 0.6);
+        }
+
+        /* ── CONTACT ── */
+        .contact-section {
+            padding: 6rem 0;
+            background: var(--bone);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info h2 em {
+            color: var(--moss);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .cd-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(207, 187, 153, 0.25);
+            transition: var(--trans);
+        }
+
+        .cd-item:last-child {
+            border-bottom: none;
+        }
+
+        .cd-item:hover {
+            transform: translateX(6px);
+        }
+
+        .cd-icon {
+            width: 3rem;
+            height: 3rem;
+            min-width: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(136, 144, 99, 0.12);
+            border: 1px solid rgba(136, 144, 99, 0.15);
+            color: var(--moss);
+            font-size: 1rem;
+            flex-shrink: 0;
+            transition: var(--trans);
+        }
+
+        .cd-item:hover .cd-icon {
+            background: var(--moss);
+            color: var(--white);
+            transform: scale(1.08);
+        }
+
+        .cd-icon i {
+            line-height: 1;
+        }
+
+        .cd-item strong {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--moss);
+            margin-bottom: 0.3rem;
+        }
+
+        .cd-item p {
+            font-size: 0.88rem;
+        }
+
+        .cd-item a {
+            color: var(--cafe);
+            transition: color var(--trans);
+        }
+
+        .cd-item a:hover {
+            color: var(--kombu);
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-social a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.75rem 1rem;
+            background: rgba(136, 144, 99, 0.1);
+            border: 1px solid rgba(136, 144, 99, 0.15);
+            border-radius: 999px;
+            color: var(--cafe);
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: var(--trans);
+        }
+
+        .contact-social a i {
+            color: var(--moss);
+            font-size: 1rem;
+            transition: var(--trans);
+        }
+
+        .contact-social a:hover {
+            background: var(--moss);
+            border-color: var(--moss);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .contact-social a:hover i {
+            color: var(--white);
+        }
+
+        .contact-form-wrap {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(207, 187, 153, 0.3);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--moss);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            border: 1.5px solid rgba(207, 187, 153, 0.45);
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+            color: var(--cafe);
+            background: var(--bone-lt);
+            outline: none;
+            transition: border-color var(--trans);
+            width: 100%;
+            -webkit-appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--moss);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-success {
+            display: none;
+            margin-top: 1rem;
+            padding: 0.9rem 1.2rem;
+            background: rgba(53, 64, 36, 0.08);
+            border-radius: 6px;
+            color: var(--kombu);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .form-success.visible {
+            display: block;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .story-img-wrap {
+                aspect-ratio: 16/9;
+                max-height: 380px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .founders-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cn-hero {
+                height: 60svh;
+                min-height: 420px;
+            }
+
+            .story-section,
+            .values-section,
+            .founders-section,
+            .journey-section {
+                padding: 4rem 0;
+            }
+
+            .founders-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .founder-photo {
+                height: 300px;
+            }
+
+            .journey-track {
+                padding-left: 1.8rem;
+            }
+
+            .journey-dot {
+                left: -1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cn-hero {
+                min-height: 380px;
+            }
+
+            .cn-hero-title {
+                font-size: 2rem;
+            }
+
+            .value-card {
+                padding: 2rem 1.4rem;
+            }
+
+            .founder-photo {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="/images/logo/lemon-leaf-logo.png" alt="Lemon Leaf Resort"
+                    onerror="this.style.display='none'" />
+            </div>
+            <div class="preloader-name">Lemon Leaf Resort</div>
+            <div class="preloader-tagline">Contact</div>
+            <div class="preloader-bar">
+                <div class="preloader-fill" id="preloaderFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar"></div>
+
+    <!-- ABOUT HERO -->
+    <section class="cn-hero" id="contact-hero">
+        <div class="cn-hero-bg" style="background-image:url('/images/hero-banner/infinity-pool.jpg')"></div>
+        <div class="cn-hero-overlay"></div>
+        <div class="cn-hero-content">
+            <div class="hero-eyebrow reveal-up">Contact</div>
+            <h1 class="cn-hero-title reveal-up delay-1">Three Friends.<em> One Forgotten Forest.</em></h1>
+            <p class="cn-hero-sub reveal-up delay-2">Lemon Leaf Resort began as a weekend conversation between three
+                friends who wanted Pune to have a getaway that didn't feel like a getaway from itself.</p>
+        </div>
+        <div class="cn-hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <span class="eyebrow">Reach Us</span>
+                    <h2>We'd Love to<br /><em>Have You Here</em></h2>
+                    <div class="contact-details">
+                        <div class="cd-item"><span class="cd-icon"><i class="fa-solid fa-location-dot"></i></span>
+                            <div><strong>Address</strong>
+                                <p>Gat No. 13/4, Lemon Leaf, Wadhane, Bhor,<br />Pune — Maharashtra 412206</p>
+                            </div>
+                        </div>
+                        <div class="cd-item"><span class="cd-icon"><i class="fa-solid fa-phone-volume"></i></span>
+                            <div><strong>Phone / WhatsApp</strong>
+                                <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                            </div>
+                        </div>
+                        <div class="cd-item"><span class="cd-icon"><i class="fa-solid fa-envelope"></i></span>
+                            <div><strong>Email</strong>
+                                <p><a href="mailto:hello@lemonleafresort.com">hello@lemonleafresort.com</a></p>
+                            </div>
+                        </div>
+                        <div class="cd-item"><span class="cd-icon"><i class="fa-solid fa-clock"></i></span>
+                            <div><strong>Reservation Hours</strong>
+                                <p>Mon–Sun · 9:00 AM – 8:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="cd-item"><span class="cd-icon"><i class="fa-solid fa-right-to-bracket"></i></span>
+                            <div><strong>Check-in / Check-out</strong>
+                                <p>Check-in: 4:00 PM &nbsp;·&nbsp; Check-out: 11:00 AM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="#" aria-label="Instagram"> <i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="#" aria-label="Facebook"> <i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                        <a href="https://wa.me/919876543210" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i>
+                            WhatsApp</a>
+                    </div>
+                </div>
+                <div class="contact-form-wrap reveal-right">
+                    <form id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname"
+                                    placeholder="Ananya" required /></div>
+                            <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname"
+                                    placeholder="Sharma" required /></div>
+                        </div>
+                        <div class="form-group"><label for="email">Email Address</label><input type="email" id="email"
+                                placeholder="ananya@email.com" required /></div>
+                        <div class="form-group"><label for="phone">Phone / WhatsApp Number</label><input type="tel"
+                                id="phone" placeholder="+91 98765 43210" /></div>
+                        <div class="form-group">
+                            <label for="interest">I'm Interested In</label>
+                            <select id="interest">
+                                <option>Decathlon Tent Stay</option>
+                                <option>Glamping Pod</option>
+                                <option>Luxury Bubble Dome</option>
+                                <option>Rajasthani Tent</option>
+                                <option>Group / Corporate Booking</option>
+                                <option>Weekend Package</option>
+                                <option>General Enquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label for="visitdate">Preferred Visit Date</label><input type="date"
+                                id="visitdate" /></div>
+                        <div class="form-group"><label for="message">Message / Special Requests</label><textarea
+                                id="message" rows="3"
+                                placeholder="Tell us about your group, any pets, special occasions..."></textarea></div>
+                        <button type="submit" class="btn-primary btn-full">Send Enquiry</button>
+                        <div class="form-success" id="formSuccess">✓ Enquiry sent! Our team will reach you within a few
+                            hours on WhatsApp or phone.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER (reused pattern) -->
+    <section class="cta-banner">
+        <div class="cta-banner-bg"></div>
+        <div class="cta-banner-inner">
+            <div class="cta-content reveal-up">
+                <span class="eyebrow eyebrow--light"><i class="fa-solid fa-location-dot"></i> Bhor, Pune · Just 55
+                    km Away</span>
+                <h2>Come Meet Us<br /><em>in Person</em></h2>
+                <p>The best way to understand Lemon Leaf is to sit by our bonfire and ask us yourself. We'll save
+                    you a seat.</p>
+                <div class="cta-actions">
+                    <a href="index.html#book" class="btn-primary">Book a Stay</a>
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-whatsapp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+                        </svg>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/919876543210" class="whatsapp-fab" target="_blank" rel="noopener"
+        aria-label="Chat on WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+            <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.114.552 4.1 1.512 5.834L.057 23.57l5.91-1.47A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.997-1.37l-.358-.213-3.707.922.986-3.604-.234-.37A9.79 9.79 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.419-4.4 9.818-9.818 9.818z" />
+        </svg>
+    </a>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
